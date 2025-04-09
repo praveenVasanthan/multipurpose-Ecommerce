@@ -6,10 +6,10 @@ import {
   Orders,
   Wishlist,
   Profile,
+  ProductDetail,
 } from "@pages/index.js";
 import MainLayout from "@layouts/MainLayout";
 import ErrorBoundary from "./ErrorBoundary";
-import { ProductDetail } from "../pages";
 
 const MainRouter = [
   {

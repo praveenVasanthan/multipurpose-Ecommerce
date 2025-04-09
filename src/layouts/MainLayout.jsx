@@ -1,11 +1,13 @@
 import { Outlet } from "react-router-dom";
-import { TopBar } from "../components";
+import { Topbar, Sidebar, Footer } from "@components";
 
 const MainLayout = () => {
   return (
     <>
-      <TopBar />
+      <Topbar />
+      <Sidebar />
       <Outlet />
+      <Footer />
     </>
   );
 };
