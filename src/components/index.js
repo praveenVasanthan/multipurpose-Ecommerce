@@ -17,3 +17,5 @@ export { default as Control } from "./Control";
 export { default as ServiceFeatures } from "./ServiceFeatures";
 //Recent Views
 export { default as RecentViews } from "./RecentViews"
+// Loader
+export { default as Loader } from "./Loader";
