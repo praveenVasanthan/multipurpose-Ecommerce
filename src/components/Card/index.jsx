@@ -1,10 +1,11 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const index = ({ product }) => {
   return (
     <div className="card-product">
       <div className="card-product-wrapper">
-        <a href="product-detail.html" className="product-img">
+        <Link to={`/products/${product.id}`} className="product-img">
           <img
             className="img-product"
             src={product.imgMain}
@@ -15,7 +16,7 @@ const index = ({ product }) => {
             src={product.imgMain}
             alt="image-product"
           />
-        </a>
+        </Link>
         <ul className="list-product-btn top-0 end-0">
           <li>
             <a
@@ -42,12 +43,12 @@ const index = ({ product }) => {
       <div className="card-product-info">
         <div className="box-title">
           <div>
-            <a
-              href="product-detail.html"
+            <Link
+              to={`/products/${product.id}`}
               className="name-product body-md-2 fw-semibold text-secondary link"
             >
               {product.title}
-            </a>
+            </Link>
           </div>
           <p className="price-wrap fw-medium">
             <span className="new-price price-text fw-medium">

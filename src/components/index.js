@@ -13,3 +13,5 @@ export { default as Card } from "./Card";
 export { default as Filter } from "./Filter";
 // Product control
 export { default as Control } from "./Control";
+// Loader
+export { default as Loader } from "./Loader";

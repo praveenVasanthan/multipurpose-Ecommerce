@@ -4,7 +4,7 @@ import { Topbar, Sidebar, Footer } from "@components";
 const MainLayout = () => {
   return (
     <>
-      <button id="goTop" className>
+      <button id="goTop" className="">
         <span
           className="border-progress"
           style={{ "--progress-angle": "0deg" }}
