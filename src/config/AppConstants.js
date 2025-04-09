@@ -1,6 +1,6 @@
 const APP_CONSTANTS = {
   App_Name: "GoldSchema",
-  App_Logo: "/assets/img/logo/rb_42681-removebg-preview.png",
+  App_Logo: "/images/logo/logo.svg",
   Favicon: "/assets/img/logo/favicon.jpg",
   profile_img: "/assets/img/jewelry-black.jpg",
   demo_video: "/assets/img/default/avatar-default.png",

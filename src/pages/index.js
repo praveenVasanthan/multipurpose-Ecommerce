@@ -1,6 +1,6 @@
 /////Pages index
 
-export { default as Home } from "./Home";
+export { default as Home } from "./Home/index";
 export { default as Cart } from "./Cart";
 export { default as Orders } from "./Orders";
 export { default as ProductDetail } from "./ProductDetail";
