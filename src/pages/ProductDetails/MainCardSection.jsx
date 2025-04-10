@@ -1,4 +1,5 @@
 import React from "react";
+import APP_CONSTANTS from "../../config/AppConstants";
 
 const MainCardSection = ({ product }) => {
   return (
@@ -347,7 +348,10 @@ const MainCardSection = ({ product }) => {
                     </div>
                     <div className="infor-center">
                       <div className="product-info-price">
-                        <h4 className="text-primary">₹{product.price}</h4>
+                        <h4 className="text-primary">
+                          {APP_CONSTANTS.currency}
+                          {product.price}
+                        </h4>
                       </div>
                       {product.short_details && (
                         <ul className="product-fearture-list">
@@ -382,7 +386,8 @@ const MainCardSection = ({ product }) => {
                   <div className="tf-product-info-choose-option sticky-top">
                     <div className="product-delivery">
                       <p className="price-text fw-medium text-primary">
-                        ₹{product.price}
+                        {APP_CONSTANTS.currency}
+                        {product.price}
                       </p>
                       <p>
                         <i className="icon-delivery-2" />

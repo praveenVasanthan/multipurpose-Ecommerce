@@ -16,6 +16,6 @@ export { default as Control } from "./Control";
 //Services Privided
 export { default as ServiceFeatures } from "./ServiceFeatures";
 //Recent Views
-export { default as RecentViews } from "./RecentViews"
+export { default as CardCarosel } from "./CardCarosel";
 // Loader
 export { default as Loader } from "./Loader";
