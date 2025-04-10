@@ -1,5 +1,6 @@
 import { Outlet } from "react-router-dom";
 import { Topbar, Sidebar, Footer } from "@components";
+import { Login } from "@pages"
 
 const MainLayout = () => {
   return (
@@ -35,6 +36,7 @@ const MainLayout = () => {
         <Footer />
       </div>
       <Sidebar />
+      <Login />
     </>
   );
 };

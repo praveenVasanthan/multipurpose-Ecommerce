@@ -8,10 +8,10 @@ const Footer = () => {
       url: "index.html",
     },
     paymentMethods: [
-      "images/payment/visa.svg",
-      "images/payment/paypal.svg",
-      "images/payment/discover.svg",
-      "images/payment/master.svg",
+      "/images/payment/visa.svg",
+      "/images/payment/paypal.svg",
+      "/images/payment/discover.svg",
+      "/images/payment/master.svg",
     ],
     sections: [
       {
