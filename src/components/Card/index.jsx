@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import APP_CONSTANTS from "../../config/AppConstants";
 
 const index = ({ product }) => {
   return (
@@ -52,7 +53,8 @@ const index = ({ product }) => {
           </div>
           <p className="price-wrap fw-medium">
             <span className="new-price price-text fw-medium">
-              ₹{product.price}
+              {APP_CONSTANTS.currency}
+              {product.price}
             </span>
           </p>
         </div>
