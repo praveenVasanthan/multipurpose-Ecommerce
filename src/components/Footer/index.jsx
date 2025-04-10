@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import APP_CONSTANTS from "../../config/AppConstants";
 
 const Footer = () => {
-  const footerData = {
+  const [footerData, setFooterData] = useState({
     logo: {
       image: APP_CONSTANTS.App_Logo || "images/logo.svg",
       url: "index.html",
@@ -83,7 +83,7 @@ const Footer = () => {
       "Blog",
       "🔥 50% OFF",
     ],
-  };
+  });
 
   return (
     <footer className="tf-footer">

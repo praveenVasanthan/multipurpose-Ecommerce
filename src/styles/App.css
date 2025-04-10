@@ -1,0 +1,13 @@
+body{
+  min-width: 386px;
+}
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  display: none !important;
+}
+
+.box-btn-slide {
+  position: relative;
+  z-index: 2;
+  right: 50px;
+}

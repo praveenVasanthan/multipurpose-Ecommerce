@@ -1,12 +1,14 @@
-import React from 'react'
-import { Banner } from '@components/index.js'
+import React from "react";
+import { Banner, ServiceFeatures, RecentViews } from "@components/index.js";
 
 const index = () => {
   return (
     <>
-    <Banner />
+      <Banner />
+        <ServiceFeatures />
+        <RecentViews />
     </>
-  )
-}
+  );
+};
 
-export default index
+export default index;
