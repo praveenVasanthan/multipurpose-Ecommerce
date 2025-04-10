@@ -41,7 +41,7 @@ const index = () => {
                 <ul className="nav-icon justify-content-xl-center">
                   <li className="nav-account">
                     <a
-                      href="#log"
+                      href="#authModal"
                       data-bs-toggle="modal"
                       className="link nav-icon-item link-fill"
                     >
@@ -71,8 +71,8 @@ const index = () => {
                     </a>
                   </li>
                   <li className="nav-support d-none d-xl-block">
-                    <a
-                      href="wishlist.html"
+                    <Link
+                      to={"/wishlist"}
                       className="link link-fill nav-icon-item relative"
                     >
                       <span>
@@ -93,12 +93,12 @@ const index = () => {
                         04
                       </span>
                       <p className="body-small">Wishlist</p>
-                    </a>
+                    </Link>
                   </li>
                   <li className="nav-cart">
-                    <a
-                      href="#shoppingCart"
-                      data-bs-toggle="offcanvas"
+                    <Link
+                      to={"/cart"}
+                      // data-bs-toggle="offcanvas"
                       className="link link-fill nav-icon-item relative"
                     >
                       <span>
@@ -127,7 +127,7 @@ const index = () => {
                         10
                       </span>
                       <p className="body-small">Your cart:</p>
-                    </a>
+                    </Link>
                   </li>
                   <li className="d-flex align-items-center d-xl-none btn-mobile">
                     <a

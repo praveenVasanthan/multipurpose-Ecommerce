@@ -10,6 +10,10 @@ import {
 } from "@pages/index.js";
 import MainLayout from "@layouts/MainLayout";
 import ErrorBoundary from "./ErrorBoundary";
+import AccountLayout from "../layouts/AccountLayout";
+import AccountDetails from "../pages/Profile/AccountDetails";
+import AccountAddress from "../pages/Profile/AccountAddress";
+import OrderHistory from "../pages/Profile/OrderHistory";
 
 const MainRouter = [
   {
@@ -45,7 +49,21 @@ const MainRouter = [
           },
           {
             path: "/profile",
-            element: <Profile />,
+            element: <AccountLayout />,
+            children: [
+              {
+                path: "",
+                element: <AccountDetails />,
+              },
+              {
+                path: "address",
+                element: <AccountAddress />,
+              },
+              {
+                path: "orders",
+                element: <OrderHistory />,
+              },
+            ],
           },
         ],
       },
