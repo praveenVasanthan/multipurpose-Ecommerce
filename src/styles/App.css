@@ -1,4 +1,4 @@
-body{
+body {
   min-width: 386px;
 }
 .swiper-button-next::after,
@@ -17,3 +17,21 @@ body{
   visibility: visible;
 }
 
+.change-button {
+  color: #ff3d3d;
+  border-color: #ff3d3d;
+  padding: 9px;
+  border-radius: 3px;
+  border: 1px solid #ff3d3d;
+  display: flex;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.check-mod {
+  margin-top: 5px;
+}

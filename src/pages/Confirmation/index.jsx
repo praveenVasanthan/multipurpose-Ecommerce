@@ -1,6 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
+import APP_CONSTANTS from "../../config/AppConstants";
 
 const index = () => {
+  const [orderShortDetails, setShortOrderDetails] = useState([
+    { title: "Order number", value: "6284" },
+    { title: "Date", value: "March 6, 2025" },
+    { title: "Total", value: "109" },
+    { title: "Payment method", value: "Direct bank transfer" },
+  ]);
   return (
     <div className="tf-order-detail">
       <div className="order-notice">
@@ -18,18 +25,24 @@ const index = () => {
         <p>Thank you. Your order has been received.</p>
       </div>
       <ul className="order-overview-list">
-        <li>
-          Order number: <strong>6284</strong>
-        </li>
-        <li>
-          Date: <strong>March 6, 2025</strong>
-        </li>
-        <li>
-          Total: <strong>$109.91</strong>
-        </li>
-        <li>
-          Payment method: <strong>Direct bank transfer</strong>
-        </li>
+        {orderShortDetails.map((item) => {
+          if (item.title == "Total") {
+            return (
+              <li>
+                {item.title}:{" "}
+                <strong>
+                  {APP_CONSTANTS.currency}
+                  {item.value}
+                </strong>
+              </li>
+            );
+          }
+          return (
+            <li>
+              {item.title}: <strong>{item.value}</strong>
+            </li>
+          );
+        })}
       </ul>
       <div className="order-detail-wrap">
         <h5 className="fw-bold">Order details</h5>

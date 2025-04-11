@@ -3,7 +3,18 @@ import React from "react";
 const AddressForm = () => {
   return (
     <div className="wrap">
-      <h5 className="title fw-semibold">Delivery</h5>
+      <div style={{ display: "flex", justifyContent: "space-between" }}>
+        <h5 className="title fw-semibold">Delivery</h5>
+
+        <a
+          href="#addresOption"
+          data-bs-toggle="modal"
+          className="link nav-icon-item link-fill change-button"
+        >
+          Change Address
+        </a>
+      </div>
+
       <form action="#" className="def">
         <div className="cols">
           <fieldset>
@@ -14,7 +25,7 @@ const AddressForm = () => {
           </fieldset>
           <fieldset>
             <label>
-              Last name<span className="text-danger">*</span>
+              Contact Number<span className="text-danger">*</span>
             </label>
             <input
               type="number"

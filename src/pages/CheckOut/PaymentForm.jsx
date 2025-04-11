@@ -7,7 +7,7 @@ const PaymentForm = () => {
       <h5 className="title">Payment</h5>
       <form action="#" className="form-payment">
         <div className="payment-box" id="payment-box">
-          <div className="payment-item payment-choose-card active">
+          <div className="payment-item payment-choose-card">
             <label
               htmlFor="credit-card-method-mastercard"
               className="payment-header"
@@ -30,7 +30,7 @@ const PaymentForm = () => {
             </label>
             <div
               id="credit-card-payment-mastercard"
-              className="collapse show"
+              className="collapse"
               data-bs-parent="#payment-box"
             >
               <div className="payment-body">
@@ -60,13 +60,13 @@ const PaymentForm = () => {
             </div>
           </div>
 
-          <div className="payment-item payment-choose-card active">
+          <div className="payment-item payment-choose-card">
             <label
-              htmlFor="credit-card-method-visa"
+              htmlFor="credit-card-method-upi"
               className="payment-header"
               data-bs-toggle="collapse"
-              data-bs-target="#credit-card-payment-visa"
-              aria-controls="credit-card-payment-visa"
+              data-bs-target="#credit-card-payment-upi"
+              aria-controls="credit-card-payment-upi"
               aria-expanded="false"
             >
               <span className="body-md-2 fw-semibold title">
@@ -76,38 +76,39 @@ const PaymentForm = () => {
                 type="radio"
                 name="payment-method"
                 className="d-none tf-check-rounded"
-                id="credit-card-method-visa"
+                id="credit-card-method-upi"
               />
               <p className="select-payment">UPI</p>
             </label>
+
             <div
-              id="credit-card-payment-visa"
+              id="credit-card-payment-upi"
               className="collapse"
               data-bs-parent="#payment-box"
             >
               <div className="payment-body">
                 <fieldset>
-                  <label>Credit Card number</label>
+                  <label htmlFor="upi-id">Enter your UPI ID</label>{" "}
                   <input
                     type="text"
-                    className="number-credit-card"
-                    placeholder="xxxx   xxxx   xxxx   xxxx"
+                    id="upi-id"
+                    placeholder="e.g. yourname@bank"
                   />
                 </fieldset>
-                <div className="cols">
-                  <fieldset>
-                    <label>Expiration date</label>
-                    <input type="date" />
-                  </fieldset>
-                  <fieldset>
-                    <label>CVV</label>
-                    <input type="number" placeholder="xxx" />
-                  </fieldset>
+
+                <a
+                  className="tf-btn btn-gray"
+                  href="/products"
+                  style={{ width: "200px" }}
+                >
+                  <span className="text-white">Pay</span>
+                </a>
+                <div className="text-note mt-2">
+                  <small>
+                    You'll receive a payment request in your UPI app to approve
+                    the payment.
+                  </small>
                 </div>
-                <fieldset>
-                  <label>Name on card</label>
-                  <input type="text" placeholder="e.g. JOHNDOE" />
-                </fieldset>
               </div>
             </div>
           </div>
