@@ -14,6 +14,8 @@ import AccountLayout from "../layouts/AccountLayout";
 import AccountDetails from "../pages/Profile/AccountDetails";
 import AccountAddress from "../pages/Profile/AccountAddress";
 import OrderHistory from "../pages/Profile/OrderHistory";
+import CheckOutLayout from "../layouts/CheckOutLayout";
+import { CheckOut, Confirmation } from "../pages";
 
 const MainRouter = [
   {
@@ -37,7 +39,12 @@ const MainRouter = [
           },
           {
             path: "/cart",
-            element: <Cart />,
+            element: <CheckOutLayout />,
+            children: [
+              { path: "", element: <Cart /> },
+              { path: "checkout", element: <CheckOut /> },
+              { path: "confirmation", element: <Confirmation /> },
+            ],
           },
           {
             path: "/orders",
