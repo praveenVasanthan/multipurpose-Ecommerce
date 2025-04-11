@@ -5,7 +5,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 
 const index = () => {
-  const [iconData] = useState([
+  const [iconData, setIconData] = useState([
     {
       iconClass: "icon-delivery",
       title: "Free Delivery",
