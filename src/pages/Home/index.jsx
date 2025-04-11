@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Banner, ServiceFeatures, CardCarosel } from "@components/index.js";
+import { Banner, ServiceFeatures, CardCarosel, OfferCards } from "@components/index.js";
 
 const index = () => {
   const [caroselData, setCaroselData] = useState({
@@ -70,12 +70,55 @@ const index = () => {
         imgMain: "/images/product/product-137.jpg",
       },
     ],
-  });
+  },
+  // {
+  //   title: "",
+  //   values: [
+  //     {
+  //       id: 1,
+  //       title: "deals",
+  //       subtitle: "catch big",
+  //       description: "on the headphones",
+  //       sale: "20%",
+  //       image: "images/collection/cls-category-1.jpg",
+  //       delay: "0s",
+  //     },
+  //     {
+  //       id: 2,
+  //       title: "deals",
+  //       subtitle: "catch big",
+  //       description: "on the cameras",
+  //       sale: "15%",
+  //       image: "images/collection/cls-category-2.jpg",
+  //       delay: "0.1s",
+  //     },
+  //     {
+  //       id: 3,
+  //       title: "deals",
+  //       subtitle: "catch big",
+  //       description: "on the phones",
+  //       sale: "28%",
+  //       image: "images/collection/cls-category-3.jpg",
+  //       delay: "0.2s",
+  //     },
+  //     {
+  //       id: 4,
+  //       title: "deals",
+  //       subtitle: "catch big",
+  //       description: "on the watchs",
+  //       sale: "22%",
+  //       image: "images/collection/cls-category-4.jpg",
+  //       delay: "0.3s",
+  //     },
+  //   ]
+  // }
+);
   return (
     <>
       <Banner />
       <ServiceFeatures />
       <CardCarosel caroselData={caroselData} />
+      <OfferCards />
     </>
   );
 };

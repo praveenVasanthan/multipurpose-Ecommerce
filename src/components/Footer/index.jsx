@@ -17,34 +17,34 @@ const Footer = () => {
       {
         title: "Get help",
         links: [
-          { label: "Delivery Information", href: "privacy.html" },
-          { label: "Sale Terms & Conditions", href: "faq.html" },
-          { label: "Returns & Refunds", href: "privacy.html" },
-          { label: "Privacy Notice", href: "privacy.html" },
-          { label: "Shopping FAQs", href: "faq.html" },
+          { label: "Terms & Conditions", href: "privacy.html" },
+          { label: "Privacy Policy", href: "faq.html" },
+          { label: "Cookie Settings", href: "privacy.html" },
+          // { label: "Privacy Notice", href: "privacy.html" },
+          // { label: "Shopping FAQs", href: "faq.html" },
         ],
       },
-      {
-        title: "Popular categories",
-        links: [
-          { label: "Laptops & Computers", href: "shop-default.html" },
-          { label: "Cameras & Photography", href: "shop-default.html" },
-          { label: "Smart Phones & Tablets", href: "shop-default.html" },
-          { label: "Video Games & Consoles", href: "shop-default.html" },
-          { label: "TV & Audio", href: "shop-default.html" },
-          { label: "Gadgets", href: "shop-default.html" },
-          { label: "Waterproof Headphones", href: "shop-default.html" },
-        ],
-      },
+      // {
+      //   title: "Popular categories",
+      //   links: [
+      //     { label: "Laptops & Computers", href: "shop-default.html" },
+      //     { label: "Cameras & Photography", href: "shop-default.html" },
+      //     { label: "Smart Phones & Tablets", href: "shop-default.html" },
+      //     { label: "Video Games & Consoles", href: "shop-default.html" },
+      //     { label: "TV & Audio", href: "shop-default.html" },
+      //     { label: "Gadgets", href: "shop-default.html" },
+      //     { label: "Waterproof Headphones", href: "shop-default.html" },
+      //   ],
+      // },
       {
         title: "Customer Care",
         links: [
           { label: "My Account", href: "my-account.html" },
           { label: "Track your Order", href: "track-your-order.html" },
           { label: "Customer Service", href: "contact.html" },
-          { label: "Returns/Exchange", href: "privacy.html" },
-          { label: "FAQs", href: "faq.html" },
-          { label: "Product Support", href: "contact.html" },
+          // { label: "Returns/Exchange", href: "privacy.html" },
+          // { label: "FAQs", href: "faq.html" },
+          // { label: "Product Support", href: "contact.html" },
         ],
       },
       {
@@ -53,17 +53,17 @@ const Footer = () => {
           {
             icon: "icon-location",
             text: "8500 Lorem Street Chicago, IL 55030 Dolor sit amet",
-            href: "#",
+            href: "https://www.google.com/maps?q=Onsus+Store,+123+Main+St,+Chicago,+IL",
           },
           {
             icon: "icon-phone",
-            text: "+8(800) 123 4567",
-            href: "#",
+            text: "+91 9876598765",
+            href: "tel:+91 9876598765",
           },
           {
             icon: "icon-direction",
             text: "onsus@support.com",
-            href: "#",
+            href: "mailto:onsus@support.com",
           },
         ],
       },
@@ -75,14 +75,7 @@ const Footer = () => {
       { icon: "icon-linkin", url: "https://www.linkedin.com/" },
       { icon: "icon-whatapp", url: "https://web.whatsapp.com/" },
     ],
-    bottomLinks: [
-      "New arrivals",
-      "Best sale",
-      "Value of the day",
-      "Top 100 offers",
-      "Blog",
-      "🔥 50% OFF",
-    ],
+    bottomLinks: ["New arrivals", "Best sale", "Value of the day"],
   });
 
   return (
@@ -126,7 +119,7 @@ const Footer = () => {
                                 <span className="icon">
                                   <i className={item.icon} />
                                 </span>
-                                <a href={item.href} className="link">
+                                <a href={item.href} className="link" target="_blank">
                                   {item.text}
                                 </a>
                               </>
@@ -210,8 +203,7 @@ const Footer = () => {
                 ))}
               </ul>
               <p className="nocopy caption text-center">
-                <span className="fw-medium">Onsus.</span> © 2025. All rights
-                reserved - Designed by ThemesFlat
+                <span className="fw-medium"></span> © 2025. All rights reserved
               </p>
             </div>
           </div>
