@@ -1,6 +1,7 @@
 import { Outlet } from "react-router-dom";
 import { Topbar, Sidebar, Footer } from "@components";
 import { Login } from "@pages"
+import ForgotPassword from "@pages/Login/ForgotPassword";
 
 const MainLayout = () => {
   return (
@@ -37,6 +38,7 @@ const MainLayout = () => {
       </div>
       <Sidebar />
       <Login />
+      <ForgotPassword />
     </>
   );
 };

@@ -93,10 +93,6 @@ const index = () => {
                   <span className="font-2">Shop now</span>
                 </a>
               </div>
-              <div className="box-sale-wrap">
-                <p className="small-text">Sale</p>
-                <p className="title-sidebar-2">{item.sale}</p>
-              </div>
             </div>
           </SwiperSlide>
         ))}

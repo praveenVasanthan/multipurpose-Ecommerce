@@ -5,7 +5,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 
 const index = () => {
-  const [iconData, setIconData] = useState([
+  const [iconData] = useState([
     {
       iconClass: "icon-delivery",
       title: "Free Delivery",
@@ -39,14 +39,14 @@ const index = () => {
         <Swiper
           modules={[Pagination]}
           spaceBetween={20}
-          pagination={{ clickable: true }}
+          pagination={{ clickable: true, el: ".sw-pagination-iconbox" }}
           breakpoints={{
             320: { slidesPerView: 1 },
             480: { slidesPerView: 2 },
             768: { slidesPerView: 3 },
             1024: { slidesPerView: 5 },
           }}
-          className="tf-sw-iconbox"
+          className="tf-sw-iconbox position-relative"
         >
           {iconData.map((item, index) => (
             <SwiperSlide key={index}>
@@ -61,6 +61,7 @@ const index = () => {
               </div>
             </SwiperSlide>
           ))}
+          <div className="sw-pagination-iconbox sw-dot-default justify-content-center"></div>
         </Swiper>
       </div>
     </div>

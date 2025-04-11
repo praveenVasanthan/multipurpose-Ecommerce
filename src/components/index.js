@@ -21,3 +21,5 @@ export { default as CardCarosel } from "./CardCarosel";
 export { default as Loader } from "./Loader";
 //Offered Products
 export { default as OfferCards } from "./OfferCards"
+//Special Offer
+export { default as BestOffer } from "./BestOffer"

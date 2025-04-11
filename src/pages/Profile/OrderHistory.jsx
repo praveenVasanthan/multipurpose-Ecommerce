@@ -75,6 +75,34 @@ const OrderHistory = () => {
             ))}
           </tbody>
         </table>
+        <ul className="wg-pagination wd-load">
+                    <li>
+                      <a href="#" className="link">
+                        <i className="icon-arrow-left-lg" />
+                      </a>
+                    </li>
+                    <li className="active">
+                      <p className="title-normal link">1</p>
+                    </li>
+                    <li>
+                      <a href="#" className="title-normal link">
+                        2
+                      </a>
+                    </li>
+                    <li>
+                      <p className="title-normal">...</p>
+                    </li>
+                    <li>
+                      <a href="#" className="title-normal link">
+                        10
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" className="link">
+                        <i className="icon-arrow-right-lg" />
+                      </a>
+                    </li>
+                  </ul>
       </div>
     </div>
   );
