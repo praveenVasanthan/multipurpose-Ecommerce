@@ -4,40 +4,43 @@ const AccountAddress = () => {
   const [addresses, setAddresses] = useState([
     {
       id: 1,
-      firstName: "Themesflat",
-      lastName: "",
-      email: "onsus@support.com",
-      company: "Company",
-      address: "8500 Lorem Street",
+      fullName: "Themesflat",
+      houseNo: "91/1",
+      street: "Middle Street",
+      area: "Lorem",
       city: "Punchbowl",
-      country: "Chicago",
-      zip: "55030",
+      state: "Chicago",
+      pin: "55030",
       phone: "+8(800) 123 4567",
+      landmark: "Near Asoka",
+      addressType: "Home",
     },
     {
       id: 2,
-      firstName: "Onsus",
-      lastName: "",
-      email: "themesflat@support.com",
-      company: "Company",
-      address: "17 Yarran st",
+      fullName: "Onsus",
+      houseNo: "121A",
+      street: "North Street",
+      area: "Yarran",
       city: "Count",
-      country: "Australia",
-      zip: "9226",
+      state: "Australia",
+      pin: "9226",
       phone: "+6(800) 1234 3435",
+      landmark: "Near TCS",
+      addressType: "Home",
     },
   ]);
 
   const [form, setForm] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-    company: "",
-    address: "",
+    fullName: "",
+    houseNo: "",
+    street: "",
+    area: "",
     city: "",
-    country: "",
-    zip: "",
+    state: "",
+    pin: "",
     phone: "",
+    landmark: "",
+    addressType: "Home",
   });
 
   const [activeFormType, setActiveFormType] = useState(null); // "add", "edit", or null
@@ -49,15 +52,15 @@ const AccountAddress = () => {
 
   const resetForm = () => {
     setForm({
-      firstName: "",
-      lastName: "",
-      email: "",
-      company: "",
-      address: "",
+      fullName: "",
+      houseNo: "",
+      street: "",
+      area: "",
       city: "",
-      country: "",
-      zip: "",
+      state: "",
+      pin: "",
       phone: "",
+      landmark: "",
     });
     setActiveFormType(null);
     setEditingId(null);
@@ -92,9 +95,7 @@ const AccountAddress = () => {
 
   return (
     <div className="my-account-content account-address">
-      <h4 className="fw-semibold mb-20">
-        Your addresses ({addresses.length})
-      </h4>
+      <h4 className="fw-semibold mb-20">Your addresses ({addresses.length})</h4>
 
       <div className="widget-inner-address">
         {activeFormType !== "add" && activeFormType !== "edit" && (
@@ -115,88 +116,18 @@ const AccountAddress = () => {
             onSubmit={activeFormType === "edit" ? handleUpdate : handleAdd}
           >
             <div className="form-content">
-              <div className="cols">
-                <fieldset>
-                  <label>First Name</label>
-                  <input
-                    type="text"
-                    name="firstName"
-                    value={form.firstName}
-                    onChange={handleInputChange}
-                    required
-                  />
-                </fieldset>
-                <fieldset>
-                  <label>Last Name</label>
-                  <input
-                    type="text"
-                    name="lastName"
-                    value={form.lastName}
-                    onChange={handleInputChange}
-                    required
-                  />
-                </fieldset>
-              </div>
+              {/* <div className="cols"> */}
               <fieldset>
-                <label>Email</label>
-                <input
-                  type="email"
-                  name="email"
-                  value={form.email}
-                  onChange={handleInputChange}
-                  required
-                />
-              </fieldset>
-              <fieldset>
-                <label>Company</label>
+                <label>Full Name</label>
                 <input
                   type="text"
-                  name="company"
-                  value={form.company}
+                  name="fullName"
+                  value={form.fullName}
                   onChange={handleInputChange}
                   required
                 />
               </fieldset>
-              <fieldset>
-                <label>Address 1</label>
-                <input
-                  type="text"
-                  name="address"
-                  value={form.address}
-                  onChange={handleInputChange}
-                  required
-                />
-              </fieldset>
-              <fieldset>
-                <label>City</label>
-                <input
-                  type="text"
-                  name="city"
-                  value={form.city}
-                  onChange={handleInputChange}
-                  required
-                />
-              </fieldset>
-              <fieldset>
-                <label>Country/Region</label>
-                <input
-                  type="text"
-                  name="country"
-                  value={form.country}
-                  onChange={handleInputChange}
-                  required
-                />
-              </fieldset>
-              <fieldset>
-                <label>Postal/ZIP Code</label>
-                <input
-                  type="text"
-                  name="zip"
-                  value={form.zip}
-                  onChange={handleInputChange}
-                  required
-                />
-              </fieldset>
+              {/* </div> */}
               <fieldset>
                 <label>Phone</label>
                 <input
@@ -207,6 +138,104 @@ const AccountAddress = () => {
                   required
                 />
               </fieldset>
+              <fieldset>
+                <label>Flat / House.No / Building</label>
+                <input
+                  type="text"
+                  name="houseNo"
+                  value={form.houseNo}
+                  onChange={handleInputChange}
+                  required
+                />
+              </fieldset>
+              <fieldset>
+                <label>Street Name / Colony</label>
+                <input
+                  type="text"
+                  name="street"
+                  value={form.street}
+                  onChange={handleInputChange}
+                  required
+                />
+              </fieldset>
+              <fieldset>
+                <label>Locality / Area</label>
+                <input
+                  type="text"
+                  name="area"
+                  value={form.area}
+                  onChange={handleInputChange}
+                  required
+                />
+              </fieldset>
+              <fieldset>
+                <label>City / Town</label>
+                <input
+                  type="text"
+                  name="city"
+                  value={form.city}
+                  onChange={handleInputChange}
+                  required
+                />
+              </fieldset>
+              <fieldset>
+                <label>State</label>
+                <input
+                  type="text"
+                  name="state"
+                  value={form.state}
+                  onChange={handleInputChange}
+                  required
+                />
+              </fieldset>
+              <fieldset>
+                <label>Pin Code</label>
+                <input
+                  type="text"
+                  name="pin"
+                  value={form.pin}
+                  onChange={handleInputChange}
+                  required
+                />
+              </fieldset>
+              <fieldset>
+                <label>Landmark (optional)</label>
+                <input
+                  type="text"
+                  name="landmark"
+                  value={form.landmark}
+                  onChange={handleInputChange}
+                />
+              </fieldset>
+              <div className="radio-group">
+                <label>Address Type</label>
+                <div className="d-flex gap-4">
+                  <fieldset>
+                    <label>
+                      <input
+                        type="radio"
+                        name="addressType"
+                        value="Home"
+                        checked={form.addressType === "Home"}
+                        onChange={handleInputChange}
+                      />
+                      Home
+                    </label>
+                  </fieldset>
+                  <fieldset>
+                  <label>
+                    <input
+                      type="radio"
+                      name="addressType"
+                      value="Work"
+                      checked={form.addressType === "Work"}
+                      onChange={handleInputChange}
+                    />
+                    Work
+                  </label>
+                  </fieldset>
+                </div>
+              </div>
             </div>
             <div className="box-btn">
               <button className="tf-btn btn-large" type="submit">
@@ -228,17 +257,19 @@ const AccountAddress = () => {
         <ul className="list-account-address tf-grid-layout md-col-2">
           {addresses.map((addr) => (
             <li className="account-address-item" key={addr.id}>
-              <p className="title title-sidebar fw-semibold">{addr.address}</p>
+              <p className="title title-sidebar fw-semibold">{addr.area}</p>
               <div className="info-detail">
                 <div className="box-infor">
-                  <p className="title-sidebar">{addr.firstName}</p>
-                  <p className="title-sidebar">{addr.email}</p>
-                  <p className="title-sidebar">{addr.company}</p>
-                  <p className="title-sidebar">{addr.address}</p>
+                  <p className="title-sidebar">{addr.fullName}</p>
+                  <p className="title-sidebar">{addr.houseNo}</p>
+                  <p className="title-sidebar">{addr.street}</p>
+                  <p className="title-sidebar">{addr.area}</p>
                   <p className="title-sidebar">{addr.city}</p>
-                  <p className="title-sidebar">{addr.country}</p>
-                  <p className="title-sidebar">{addr.zip}</p>
+                  <p className="title-sidebar">{addr.state}</p>
+                  <p className="title-sidebar">{addr.pin}</p>
                   <p className="title-sidebar">{addr.phone}</p>
+                  <p className="title-sidebar">{addr.landmark}</p>
+                  <p className="title-sidebar">Type: {addr.addressType}</p>
                 </div>
                 <div className="box-btn">
                   <button

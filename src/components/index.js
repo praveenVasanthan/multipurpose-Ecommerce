@@ -19,3 +19,5 @@ export { default as ServiceFeatures } from "./ServiceFeatures";
 export { default as CardCarosel } from "./CardCarosel";
 // Loader
 export { default as Loader } from "./Loader";
+//Offered Products
+export { default as OfferCards } from "./OfferCards"
