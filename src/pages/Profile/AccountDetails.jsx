@@ -7,22 +7,12 @@ const AccountDetails = () => {
         <h4 className="fw-semibold mb-20">Information</h4>
         <form action="#" className="form-account-details">
           <div className="form-content">
-            <div className="cols">
               <fieldset>
                 <input
                   type="text"
-                  placeholder="First Name"
-                  defaultValue="Mas"
+                  placeholder="Full Name"
                 />
               </fieldset>
-              <fieldset>
-                <input
-                  type="text"
-                  placeholder="Last Name"
-                  defaultValue="Shin"
-                />
-              </fieldset>
-            </div>
             <div className="cols">
               <fieldset>
                 <input

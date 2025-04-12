@@ -24,25 +24,33 @@ const index = () => {
               <div className="form-content">
                 <fieldset>
                   <label className="fw-semibold body-md-2">
-                    Phone number *
+                    Phone number <span style={{ color: "red" }}>*</span>
                   </label>
                   <input type="text" placeholder="Your phone number" />
                 </fieldset>
-                {login && (
+                <fieldset>
+                  <label className="fw-semibold body-md-2">
+                    Password <span style={{ color: "red" }}>*</span>
+                  </label>
+                  <input type="password" placeholder="Enter your password" />
+                </fieldset>
+                {!login && (
                   <>
                     <fieldset>
                       <label className="fw-semibold body-md-2">
-                        Password *
+                        Confirm Password <span style={{ color: "red" }}>*</span>
                       </label>
                       <input
                         type="password"
-                        placeholder="Enter your password"
+                        placeholder="Confirm Your password"
                       />
                     </fieldset>
-                    <a href="#" className="link text-end body-text-3">
-                      Forgot password?
-                    </a>
                   </>
+                )}
+                {login && (
+                  <a href="#forgotPassword" className="link text-end body-text-3" data-bs-toggle="modal">
+                    Forgot password?
+                  </a>
                 )}
               </div>
               <button type="submit" className="tf-btn w-100 text-white">
