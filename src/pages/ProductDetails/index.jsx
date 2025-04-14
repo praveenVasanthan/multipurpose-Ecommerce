@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import MainCardSection from "./MainCardSection";
+import MainCardSection from "./MainCard";
 import TabContent from "./TabSection";
 import { CardCarosel } from "../../components";
 

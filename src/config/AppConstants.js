@@ -1,5 +1,5 @@
 const APP_CONSTANTS = {
-  App_Name: "GoldSchema",
+  App_Name: "E-commerce",
   App_Logo: "/images/logo/logo.svg",
   currency: "₹",
 };

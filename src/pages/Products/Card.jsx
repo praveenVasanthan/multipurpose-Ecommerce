@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import APP_CONSTANTS from "../../config/AppConstants";
 
-const index = ({ product }) => {
+const Card = ({ product }) => {
   return (
     <div className="card-product">
       <div className="card-product-wrapper">
@@ -111,4 +111,4 @@ const index = ({ product }) => {
   );
 };
 
-export default index;
+export default Card;

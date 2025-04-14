@@ -194,7 +194,7 @@ const ReviewsTab = () => {
           <ul className="review-list">
             <li className="box-review">
               <div className="avt">
-                <img src="/images/avatar/review-1.jpg" alt />
+                <img src="/images/avatar/review-1.jpg" />
               </div>
               <div className="review-content">
                 <div className="author-wrap">
@@ -241,7 +241,7 @@ const ReviewsTab = () => {
             </li>
             <li className="box-review">
               <div className="avt">
-                <img src="/images/avatar/review-5.jpg" alt />
+                <img src="/images/avatar/review-5.jpg" />
               </div>
               <div className="review-content">
                 <div className="author-wrap">
@@ -290,7 +290,7 @@ const ReviewsTab = () => {
             </li>
             <li className="box-review">
               <div className="avt">
-                <img src="/images/avatar/review-6.jpg" alt />
+                <img src="/images/avatar/review-6.jpg" />
               </div>
               <div className="review-content">
                 <div className="author-wrap">

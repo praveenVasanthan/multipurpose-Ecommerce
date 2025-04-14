@@ -1,11 +1,13 @@
 import { Outlet } from "react-router-dom";
 import { Topbar, Sidebar, Footer } from "@components";
-import { Login } from "@pages"
+import { Login } from "@pages";
 import ForgotPassword from "@pages/Login/ForgotPassword";
+import { ScrollRestoration } from "react-router-dom";
 
 const MainLayout = () => {
   return (
     <>
+      <ScrollRestoration />
       <button id="goTop" className="">
         <span
           className="border-progress"

@@ -1,4 +1,6 @@
-const index = () => {
+import React from "react";
+
+const Control = () => {
   return (
     <div className="tf-shop-control flex-wrap gap-10">
       <div className="d-flex align-items-center gap-10">
@@ -83,4 +85,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Control;

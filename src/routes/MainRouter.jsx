@@ -5,7 +5,6 @@ import {
   Cart,
   Orders,
   Wishlist,
-  Profile,
   ProductDetail,
 } from "@pages/index.js";
 import MainLayout from "@layouts/MainLayout";

@@ -1,7 +1,8 @@
 import React from "react";
-import APP_CONSTANTS from "../../config/AppConstants";
+import APP_CONSTANTS from "../../../config/AppConstants";
+import Gallery from "./Gallery";
 
-const MainCardSection = ({ product }) => {
+const index = ({ product }) => {
   return (
     <section>
       <div className="tf-main-product section-image-zoom">
@@ -9,7 +10,7 @@ const MainCardSection = ({ product }) => {
           <div className="row">
             <div className="col-md-6">
               {/* Product Image */}
-              <div className="tf-product-media-wrap thumbs-default sticky-top">
+              {/* <div className="tf-product-media-wrap thumbs-default sticky-top">
                 <div className="thumbs-slider">
                   <div
                     className="swiper tf-product-media-main swiper-initialized swiper-horizontal swiper-backface-hidden"
@@ -39,7 +40,6 @@ const MainCardSection = ({ product }) => {
                             src="/images/product/product-detail-1.jpg"
                             data-zoom="/images/product/product-detail-1.jpg"
                             data-src="/images/product/product-detail-1.jpg"
-                            alt
                           />
                         </a>
                       </div>
@@ -62,7 +62,6 @@ const MainCardSection = ({ product }) => {
                             data-zoom="/images/product/product-detail-2.jpg"
                             data-src="/images/product/product-detail-2.jpg"
                             src="/images/product/product-detail-2.jpg"
-                            alt
                           />
                         </a>
                       </div>
@@ -85,7 +84,6 @@ const MainCardSection = ({ product }) => {
                             data-zoom="/images/product/product-detail-3.jpg"
                             data-src="/images/product/product-detail-3.jpg"
                             src="/images/product/product-detail-3.jpg"
-                            alt
                           />
                         </a>
                       </div>
@@ -108,7 +106,6 @@ const MainCardSection = ({ product }) => {
                             data-zoom="/images/product/product-detail-4.jpg"
                             data-src="/images/product/product-detail-4.jpg"
                             src="/images/product/product-detail-4.jpg"
-                            alt
                           />
                         </a>
                       </div>
@@ -131,7 +128,6 @@ const MainCardSection = ({ product }) => {
                             data-zoom="/images/product/product-detail-5.jpg"
                             data-src="/images/product/product-detail-5.jpg"
                             src="/images/product/product-detail-5.jpg"
-                            alt
                           />
                         </a>
                       </div>
@@ -154,7 +150,6 @@ const MainCardSection = ({ product }) => {
                             data-zoom="/images/product/product-detail-6.jpg"
                             data-src="/images/product/product-detail-6.jpg"
                             src="/images/product/product-detail-6.jpg"
-                            alt
                           />
                         </a>
                       </div>
@@ -175,8 +170,8 @@ const MainCardSection = ({ product }) => {
                         id="swiper-wrapper-cdb7f3a2200d51d9"
                         aria-live="polite"
                         style={{
-                          "-webkit-transform": "translate3d(0px, 0px, 0px)",
-                          "-ms-transform": "translate3d(0px, 0px, 0px)",
+                          WebkitTransform: "translate3d(0px, 0px, 0px)",
+                          msTransform: "translate3d(0px, 0px, 0px)",
                           transform: "translate3d(0px, 0px, 0px)",
                         }}
                       >
@@ -186,9 +181,9 @@ const MainCardSection = ({ product }) => {
                           role="group"
                           aria-label="1 / 6"
                           style={{
-                            "-webkit-transition-delay": "0.2s",
-                            "transition-delay": "0.2s",
-                            "margin-right": "10px",
+                            WebkitTransitionDelay: "0.2s",
+                            transitionDelay: "0.2s",
+                            marginRight: "10px",
                           }}
                         >
                           <div className="item">
@@ -196,7 +191,6 @@ const MainCardSection = ({ product }) => {
                               className=" ls-is-cached lazyloaded"
                               data-src="/images/product/product-detail-1.jpg"
                               src="/images/product/product-detail-1.jpg"
-                              alt
                             />
                           </div>
                         </div>
@@ -206,9 +200,9 @@ const MainCardSection = ({ product }) => {
                           role="group"
                           aria-label="2 / 6"
                           style={{
-                            "-webkit-transition-delay": "0.4s",
-                            "transition-delay": "0.4s",
-                            "margin-right": "10px",
+                            WebkitTransitionDelay: "0.4s",
+                            transitionDelay: "0.4s",
+                            marginRight: "10px",
                           }}
                         >
                           <div className="item">
@@ -216,7 +210,6 @@ const MainCardSection = ({ product }) => {
                               className=" ls-is-cached lazyloaded"
                               data-src="/images/product/product-detail-2.jpg"
                               src="/images/product/product-detail-2.jpg"
-                              alt
                             />
                           </div>
                         </div>
@@ -226,9 +219,9 @@ const MainCardSection = ({ product }) => {
                           role="group"
                           aria-label="3 / 6"
                           style={{
-                            "-webkit-transition-delay": "0.6s",
-                            "transition-delay": "0.6s",
-                            "margin-right": "10px",
+                            WebkitTransitionDelay: "0.6s",
+                            transitionDelay: "0.6s",
+                            marginRight: "10px",
                           }}
                         >
                           <div className="item">
@@ -236,7 +229,6 @@ const MainCardSection = ({ product }) => {
                               className=" ls-is-cached lazyloaded"
                               data-src="/images/product/product-detail-3.jpg"
                               src="/images/product/product-detail-3.jpg"
-                              alt
                             />
                           </div>
                         </div>
@@ -246,9 +238,9 @@ const MainCardSection = ({ product }) => {
                           role="group"
                           aria-label="4 / 6"
                           style={{
-                            "-webkit-transition-delay": "0.8s",
-                            "transition-delay": "0.8s",
-                            "margin-right": "10px",
+                            WebkitTransitionDelay: "0.8s",
+                            transitionDelay: "0.8s",
+                            marginRight: "10px",
                           }}
                         >
                           <div className="item">
@@ -256,7 +248,6 @@ const MainCardSection = ({ product }) => {
                               className=" ls-is-cached lazyloaded"
                               data-src="/images/product/product-detail-4.jpg"
                               src="/images/product/product-detail-4.jpg"
-                              alt
                             />
                           </div>
                         </div>
@@ -266,9 +257,9 @@ const MainCardSection = ({ product }) => {
                           role="group"
                           aria-label="5 / 6"
                           style={{
-                            "-webkit-transition-delay": "1s",
-                            "transition-delay": "1s",
-                            "margin-right": "10px",
+                            WebkitTransitionDelay: "1s",
+                            transitionDelay: "1s",
+                            marginRight: "10px",
                           }}
                         >
                           <div className="item">
@@ -276,7 +267,6 @@ const MainCardSection = ({ product }) => {
                               className=" ls-is-cached lazyloaded"
                               data-src="/images/product/product-detail-5.jpg"
                               src="/images/product/product-detail-5.jpg"
-                              alt
                             />
                           </div>
                         </div>
@@ -286,9 +276,9 @@ const MainCardSection = ({ product }) => {
                           role="group"
                           aria-label="6 / 6"
                           style={{
-                            "-webkit-transition-delay": "1.2s",
-                            "transition-delay": "1.2s",
-                            "margin-right": "10px",
+                            WebkitTransitionDelay: "1.2s",
+                            transitionDelay: "1.2s",
+                            marginRight: "10px",
                           }}
                         >
                           <div className="item">
@@ -296,7 +286,6 @@ const MainCardSection = ({ product }) => {
                               className=" ls-is-cached lazyloaded"
                               data-src="/images/product/product-detail-6.jpg"
                               src="/images/product/product-detail-6.jpg"
-                              alt
                             />
                           </div>
                         </div>
@@ -309,8 +298,9 @@ const MainCardSection = ({ product }) => {
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> */}
               {/* /Product Image */}
+              <Gallery />
             </div>
             <div className="col-md-6">
               {/* Product Infor */}
@@ -469,4 +459,4 @@ const MainCardSection = ({ product }) => {
   );
 };
 
-export default MainCardSection;
+export default index;
