@@ -7,12 +7,6 @@ export { default as Sidebar } from "./Sidebar";
 export { default as Banner } from "./Banner";
 // Footer
 export { default as Footer } from "./Footer";
-// Cards
-export { default as Card } from "./Card";
-// Product Filter
-export { default as Filter } from "./Filter";
-// Product control
-export { default as Control } from "./Control";
 //Services Privided
 export { default as ServiceFeatures } from "./ServiceFeatures";
 //Recent Views
@@ -20,6 +14,6 @@ export { default as CardCarosel } from "./CardCarosel";
 // Loader
 export { default as Loader } from "./Loader";
 //Offered Products
-export { default as OfferCards } from "./OfferCards"
+export { default as OfferCards } from "./OfferCards";
 //Special Offer
-export { default as BestOffer } from "./BestOffer"
+export { default as BestOffer } from "./BestOffer";

@@ -1,21 +1,13 @@
-const ProductFilter = () => {
+import React from "react";
+
+const Filter = () => {
   const filters = [
     {
       id: 1,
       name: "brand",
       title: "Brand",
       type: "checkbox",
-      values: [
-        "Razer",
-        "Corsair",
-        "SteelSeries",
-        "HyperX",
-        "JBL",
-        "Logitech",
-        "Logitech",
-        "SteelSeries",
-        "HyperX",
-      ],
+      values: ["Razer", "Corsair", "SteelSeries", "HyperX", "JBL", "Logitech"],
     },
     {
       id: 2,
@@ -50,7 +42,7 @@ const ProductFilter = () => {
           {filters.map((item) => {
             if (item.name == "price") {
               return (
-                <div className="widget-facet facet-price">
+                <div className="widget-facet facet-price" key={item.id}>
                   <p className="facet-title title-sidebar fw-semibold">
                     {item.title}
                   </p>
@@ -86,7 +78,7 @@ const ProductFilter = () => {
 
             if (item.name == "starRate") {
               return (
-                <div className="widget-facet facet-vote">
+                <div className="widget-facet facet-vote" key={item.id}>
                   <p className="facet-title title-sidebar fw-semibold">
                     {item.title}
                   </p>
@@ -120,94 +112,94 @@ const ProductFilter = () => {
                       );
                     })}
                     {/* <fieldset className="fieldset-item">
-                    <input
-                      type="radio"
-                      name="starRate"
-                      className="tf-check"
-                      id="fiveStar"
-                    />
-                    <label htmlFor="fiveStar">
-                      <span className="list-star">
-                        <i className="icon-star" />
-                        <i className="icon-star" />
-                        <i className="icon-star" />
-                        <i className="icon-star" />
-                        <i className="icon-star" />
-                      </span>
-                    </label>
-                  </fieldset>
-                  <fieldset className="fieldset-item">
-                    <input
-                      type="radio"
-                      name="starRate"
-                      className="tf-check"
-                      id="fourStar"
-                    />
-                    <label htmlFor="fourStar">
-                      <span className="list-star">
-                        <i className="icon-star" />
-                        <i className="icon-star" />
-                        <i className="icon-star" />
-                        <i className="icon-star" />
-                        <i className="icon-star text-main-4" />
-                      </span>
-                      <span className="body-text-3">&amp; Up</span>
-                    </label>
-                  </fieldset>
-                  <fieldset className="fieldset-item">
-                    <input
-                      type="radio"
-                      name="starRate"
-                      className="tf-check"
-                      id="threeStar"
-                    />
-                    <label htmlFor="threeStar">
-                      <span className="list-star">
-                        <i className="icon-star" />
-                        <i className="icon-star" />
-                        <i className="icon-star" />
-                        <i className="icon-star text-main-4" />
-                        <i className="icon-star text-main-4" />
-                      </span>
-                      <span className="body-text-3">&amp; Up</span>
-                    </label>
-                  </fieldset>
-                  <fieldset className="fieldset-item">
-                    <input
-                      type="radio"
-                      name="starRate"
-                      className="tf-check"
-                      id="twoStar"
-                    />
-                    <label htmlFor="twoStar">
-                      <span className="list-star">
-                        <i className="icon-star" />
-                        <i className="icon-star" />
-                        <i className="icon-star text-main-4" />
-                        <i className="icon-star text-main-4" />
-                        <i className="icon-star text-main-4" />
-                      </span>
-                      <span className="body-text-3">&amp; Up</span>
-                    </label>
-                  </fieldset>
-                  <fieldset className="fieldset-item">
-                    <input
-                      type="radio"
-                      name="starRate"
-                      className="tf-check"
-                      id="oneStar"
-                    />
-                    <label htmlFor="oneStar">
-                      <span className="list-star">
-                        <i className="icon-star" />
-                        <i className="icon-star text-main-4" />
-                        <i className="icon-star text-main-4" />
-                        <i className="icon-star text-main-4" />
-                        <i className="icon-star text-main-4" />
-                      </span>
-                      <span className="body-text-3">&amp; Up</span>
-                    </label>
-                  </fieldset> */}
+                      <input
+                        type="radio"
+                        name="starRate"
+                        className="tf-check"
+                        id="fiveStar"
+                      />
+                      <label htmlFor="fiveStar">
+                        <span className="list-star">
+                          <i className="icon-star" />
+                          <i className="icon-star" />
+                          <i className="icon-star" />
+                          <i className="icon-star" />
+                          <i className="icon-star" />
+                        </span>
+                      </label>
+                    </fieldset>
+                    <fieldset className="fieldset-item">
+                      <input
+                        type="radio"
+                        name="starRate"
+                        className="tf-check"
+                        id="fourStar"
+                      />
+                      <label htmlFor="fourStar">
+                        <span className="list-star">
+                          <i className="icon-star" />
+                          <i className="icon-star" />
+                          <i className="icon-star" />
+                          <i className="icon-star" />
+                          <i className="icon-star text-main-4" />
+                        </span>
+                        <span className="body-text-3">&amp; Up</span>
+                      </label>
+                    </fieldset>
+                    <fieldset className="fieldset-item">
+                      <input
+                        type="radio"
+                        name="starRate"
+                        className="tf-check"
+                        id="threeStar"
+                      />
+                      <label htmlFor="threeStar">
+                        <span className="list-star">
+                          <i className="icon-star" />
+                          <i className="icon-star" />
+                          <i className="icon-star" />
+                          <i className="icon-star text-main-4" />
+                          <i className="icon-star text-main-4" />
+                        </span>
+                        <span className="body-text-3">&amp; Up</span>
+                      </label>
+                    </fieldset>
+                    <fieldset className="fieldset-item">
+                      <input
+                        type="radio"
+                        name="starRate"
+                        className="tf-check"
+                        id="twoStar"
+                      />
+                      <label htmlFor="twoStar">
+                        <span className="list-star">
+                          <i className="icon-star" />
+                          <i className="icon-star" />
+                          <i className="icon-star text-main-4" />
+                          <i className="icon-star text-main-4" />
+                          <i className="icon-star text-main-4" />
+                        </span>
+                        <span className="body-text-3">&amp; Up</span>
+                      </label>
+                    </fieldset>
+                    <fieldset className="fieldset-item">
+                      <input
+                        type="radio"
+                        name="starRate"
+                        className="tf-check"
+                        id="oneStar"
+                      />
+                      <label htmlFor="oneStar">
+                        <span className="list-star">
+                          <i className="icon-star" />
+                          <i className="icon-star text-main-4" />
+                          <i className="icon-star text-main-4" />
+                          <i className="icon-star text-main-4" />
+                          <i className="icon-star text-main-4" />
+                        </span>
+                        <span className="body-text-3">&amp; Up</span>
+                      </label>
+                    </fieldset> */}
                   </div>
                 </div>
               );
@@ -250,4 +242,4 @@ const ProductFilter = () => {
   );
 };
 
-export default ProductFilter;
+export default Filter;

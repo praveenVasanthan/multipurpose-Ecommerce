@@ -1,7 +1,9 @@
 import React, { useState } from "react";
-import { Card, Control, Filter } from "../components";
+import Card from "./Card";
+import Filter from "./Filter";
+import Control from "./Control";
 
-const Products = () => {
+const index = () => {
   const [products, setProducts] = useState([
     {
       id: 1,
@@ -124,4 +126,4 @@ const Products = () => {
   );
 };
 
-export default Products;
+export default index;
