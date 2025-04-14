@@ -9,3 +9,4 @@ export { default as Wishlist } from "./Wishlist";
 export { default as Login } from "./Login";
 export { default as CheckOut } from "./CheckOut";
 export { default as Confirmation } from "./Confirmation";
+export { default as Contact } from "./Contact"
