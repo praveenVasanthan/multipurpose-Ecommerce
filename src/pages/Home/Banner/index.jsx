@@ -92,6 +92,7 @@ const index = () => {
               style={{
                 backgroundImage: `url(${mains.backgroundImage})`,
                 backgroundSize: "cover",
+                backgroundPosition: "center"
               }}
             >
               <div className="container">
@@ -99,14 +100,14 @@ const index = () => {
                   <div className="product-wrap hover-img flex-md-nowrap w-100">
                     <Link
                       to={mains.link}
-                      className="d-inline-flex item-product img-style"
+                      className="d-inline-flex img-style"
                       style={{ maxWidth: 618 }}
                     >
                       <img
                         src={mains.image}
                         alt={mains.name}
                         style={{
-                          objectFit: "contain",
+                          objectFit: "contain", maxHeight: "320px", width: "100%"
                         }}
                       />
                     </Link>

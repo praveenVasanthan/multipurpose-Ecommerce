@@ -3,8 +3,6 @@
 export { default as Topbar } from "./Topbar";
 // Side bar
 export { default as Sidebar } from "./Sidebar";
-// Home page banner
-export { default as Banner } from "./Banner";
 // Footer
 export { default as Footer } from "./Footer";
 // Cards

@@ -4,9 +4,8 @@ import APP_CONSTANTS from "../../config/AppConstants";
 const Table = ({ wishlistData }) => {
   return (
     <table className="tf-table-wishlist">
-      <thead>
+      <thead className="table-collapse">
         <tr>
-          <th className="wishlist-item_remove" />
           <th className="wishlist-item_image" />
           <th className="wishlist-item_info">
             <p className="product-title fw-semibold">Product Name</p>
@@ -24,9 +23,6 @@ const Table = ({ wishlistData }) => {
         {wishlistData.length > 0 ? (
           wishlistData.map((item, index) => (
             <tr className="wishlist-item" key={index}>
-              <td className="wishlist-item_remove">
-                <i className="icon-close remove link cs-pointer" />
-              </td>
               <td className="wishlist-item_image">
                 <a href="product-detail.html">
                   <img
@@ -57,13 +53,16 @@ const Table = ({ wishlistData }) => {
                 <span className="wishlist-stock-status">{item.stock}</span>
               </td>
               <td className="wishlist-item_action">
-                <a
-                  href="#shoppingCart"
-                  data-bs-toggle="offcanvas"
-                  className="tf-btn btn-gray"
-                >
-                  <span className="text-white">Add To Cart</span>
-                </a>
+                <span className="item-action">
+                <span className="tf-btn btn-gray text-white">
+                  <i className="icon-cart" />
+                  <span className="tooltip-text">Add to Cart</span>
+                </span>
+                <span className="tf-btn btn-danger text-white">
+                  <i className="icon-trash remove link cs-pointer" />
+                  <span className="tooltip-text">Remove Wishlist</span>
+                </span>
+                </span>
               </td>
             </tr>
           ))

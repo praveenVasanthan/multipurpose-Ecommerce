@@ -10,7 +10,8 @@ const AccountDetails = () => {
               <fieldset>
                 <input
                   type="text"
-                  placeholder="Full Name"
+                  placeholder="Name"
+                  defaultValue=""
                 />
               </fieldset>
             <div className="cols">
@@ -18,14 +19,14 @@ const AccountDetails = () => {
                 <input
                   type="email"
                   placeholder="Email"
-                  defaultValue="onsus@support.com"
+                  defaultValue=""
                 />
               </fieldset>
               <fieldset>
                 <input
                   type="number"
                   placeholder="Phone"
-                  defaultValue={"08801234567"}
+                  defaultValue=""
                 />
               </fieldset>
             </div>
@@ -33,7 +34,7 @@ const AccountDetails = () => {
               <input
                 type="text"
                 placeholder="Address"
-                defaultValue="Australia"
+                defaultValue=""
               />
             </fieldset>
           </div>

@@ -1,7 +1,7 @@
 import React from "react";
 
 const index = ({ bannerData }) => {
-  if (!bannerData) return null;
+    if (!bannerData) return null;
   return (
     <section className="pb-5">
       <div className="container">
@@ -38,6 +38,10 @@ const index = ({ bannerData }) => {
                   {bannerData.subtitle}
                 </h3>
               )}
+              <div className="box-sale-wrap type-3 relative">
+                <p className="small-text">{bannerData.saleLabel}</p>
+                <p className="price-text-2">{bannerData.salePrice}</p>
+              </div>
             </div>
           </div>
         </a>

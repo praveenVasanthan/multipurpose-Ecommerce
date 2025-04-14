@@ -95,7 +95,7 @@ const AccountAddress = () => {
 
   return (
     <div className="my-account-content account-address">
-      <h4 className="fw-semibold mb-20">Your addresses ({addresses.length})</h4>
+      <h4 className="mb-20">Your addresses ({addresses.length})</h4>
 
       <div className="widget-inner-address">
         {activeFormType !== "add" && activeFormType !== "edit" && (
@@ -116,125 +116,139 @@ const AccountAddress = () => {
             onSubmit={activeFormType === "edit" ? handleUpdate : handleAdd}
           >
             <div className="form-content">
-              {/* <div className="cols"> */}
+              <div className="cols">
               <fieldset>
-                <label>Full Name</label>
+                <label>Name</label>
+                <span className="text-danger">*</span>
                 <input
                   type="text"
                   name="fullName"
                   value={form.fullName}
                   onChange={handleInputChange}
+                  placeholder="Enter Your Full Name"
                   required
                 />
               </fieldset>
-              {/* </div> */}
               <fieldset>
-                <label>Phone</label>
+                <label>Contact Number</label>
+                <span className="text-danger">*</span>
                 <input
                   type="text"
                   name="phone"
                   value={form.phone}
+                  placeholder="Enter your 10 digit contact number"
                   onChange={handleInputChange}
                   required
                 />
               </fieldset>
-              <fieldset>
-                <label>Flat / House.No / Building</label>
-                <input
-                  type="text"
-                  name="houseNo"
-                  value={form.houseNo}
-                  onChange={handleInputChange}
-                  required
-                />
-              </fieldset>
-              <fieldset>
-                <label>Street Name / Colony</label>
-                <input
-                  type="text"
-                  name="street"
-                  value={form.street}
-                  onChange={handleInputChange}
-                  required
-                />
-              </fieldset>
-              <fieldset>
-                <label>Locality / Area</label>
-                <input
-                  type="text"
-                  name="area"
-                  value={form.area}
-                  onChange={handleInputChange}
-                  required
-                />
-              </fieldset>
-              <fieldset>
-                <label>City / Town</label>
-                <input
-                  type="text"
-                  name="city"
-                  value={form.city}
-                  onChange={handleInputChange}
-                  required
-                />
-              </fieldset>
+              </div>
+              <div className="cols">
+                <fieldset>
+                  <label>House.No./ Flat No. / Building Name</label>
+                  <span className="text-danger">*</span>
+                  <input
+                    type="text"
+                    name="houseNo"
+                    value={form.houseNo}
+                    placeholder="Enter house number, flat or building name"
+                    onChange={handleInputChange}
+                    required
+                  />
+                </fieldset>
+                <fieldset>
+                  <label>Street / Colony</label>
+                  <span className="text-danger">*</span>
+                  <input
+                    type="text"
+                    name="street"
+                    value={form.street}
+                    placeholder="Enter street name or colony"
+                    onChange={handleInputChange}
+                    required
+                  />
+                </fieldset>
+              </div>
+              <div className="cols">
+                <fieldset>
+                  <label>Locality / Area</label>
+                  <span className="text-danger">*</span>
+                  <input
+                    type="text"
+                    name="area"
+                    value={form.area}
+                    placeholder="Enter locality or area"
+                    onChange={handleInputChange}
+                    required
+                  />
+                </fieldset>
+                <fieldset>
+                  <label>City / Town</label>
+                  <span className="text-danger">*</span>
+                  <input
+                    type="text"
+                    name="city"
+                    value={form.city}
+                    placeholder="Enter your city or town"
+                    onChange={handleInputChange}
+                    required
+                  />
+                </fieldset>
+              </div>
+              <div className="cols">
               <fieldset>
                 <label>State</label>
+                <span className="text-danger">*</span>
                 <input
                   type="text"
                   name="state"
                   value={form.state}
+                  placeholder="Enter your state"
                   onChange={handleInputChange}
                   required
                 />
               </fieldset>
               <fieldset>
-                <label>Pin Code</label>
+                <label>Pincode</label>
+                <span className="text-danger">*</span>
                 <input
                   type="text"
                   name="pin"
                   value={form.pin}
+                  placeholder="Enter 6-digit pincode"
                   onChange={handleInputChange}
                   required
                 />
               </fieldset>
+              </div>
               <fieldset>
-                <label>Landmark (optional)</label>
+                <label>Landmark</label>
                 <input
                   type="text"
                   name="landmark"
                   value={form.landmark}
+                  placeholder="Enter a nearby landmark (optional)"
                   onChange={handleInputChange}
                 />
               </fieldset>
-              <div className="radio-group">
-                <label>Address Type</label>
-                <div className="d-flex gap-4">
-                  <fieldset>
-                    <label>
-                      <input
-                        type="radio"
-                        name="addressType"
-                        value="Home"
-                        checked={form.addressType === "Home"}
-                        onChange={handleInputChange}
-                      />
-                      Home
-                    </label>
-                  </fieldset>
-                  <fieldset>
-                  <label>
-                    <input
-                      type="radio"
-                      name="addressType"
-                      value="Work"
-                      checked={form.addressType === "Work"}
-                      onChange={handleInputChange}
-                    />
-                    Work
-                  </label>
-                  </fieldset>
-                </div>
+              <div className="tf-cart-checkbox">
+                <label className="fw-medium mb-1 d-block">Address Type</label>
+
+                <input
+                  type="radio"
+                  name="address_type"
+                  className="tf-check"
+                  defaultChecked
+                  id="default-address-home"
+                />
+                <label htmlFor="default-address-home">Home</label>
+
+                <input
+                  type="radio"
+                  name="address_type"
+                  className="tf-check"
+                  id="default-address-work"
+                />
+                <label htmlFor="default-address-work">Work</label>
               </div>
             </div>
             <div className="box-btn">

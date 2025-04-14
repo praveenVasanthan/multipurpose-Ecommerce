@@ -35,3 +35,63 @@ body {
 .check-mod {
   margin-top: 5px;
 }
+
+.tf-table-wishlist {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: scroll;
+}
+
+.tf-table-wishlist th,
+.tf-table-wishlist td {
+  padding: 1rem;
+  vertical-align: middle;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+.tf-table-wishlist thead {
+  background-color: #f8f9fa;
+}
+
+.tf-table-wishlist .wishlist-item:hover {
+  background-color: #f6f6f6;
+  transition: background-color 0.3s ease;
+}
+.wishlist-item_action .item-action{
+  display: flex;
+  justify-content: space-evenly;
+}
+.tf-btn {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.tooltip-text {
+  visibility: hidden;
+  opacity: 0;
+  width: max-content;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 4px;
+  padding: 4px 8px;
+  position: absolute;
+  z-index: 10;
+  bottom: 125%; /* show above the icon */
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  font-size: 12px;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+.tf-btn:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
