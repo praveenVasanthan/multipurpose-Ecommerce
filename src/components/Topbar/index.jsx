@@ -1,9 +1,74 @@
-import React from "react";
+import React, { useState } from "react";
 import APP_CONSTANTS from "../../config/AppConstants";
 import { Link, useLocation } from "react-router-dom";
 
 const index = () => {
   const location = useLocation().pathname;
+  const [categories, setCategories] = useState([
+    {
+      name: "Apparel",
+      iconClass: "icon-clothing",
+    },
+    {
+      name: "Automotive parts",
+      svgIcon: true, // flag to use custom SVG instead of icon class
+    },
+    {
+      name: "Beauty & personal care",
+      iconClass: "icon-beauti",
+    },
+    {
+      name: "Consumer Electronics",
+      iconClass: "icon-computer",
+    },
+    {
+      name: "Furniture",
+      iconClass: "icon-sofa",
+    },
+    {
+      name: "Home products",
+      iconClass: "icon-computer-wifi",
+    },
+    {
+      name: "Machinery",
+      iconClass: "icon-machine",
+    },
+    {
+      name: "Timepieces, jewelry & eyewear",
+      iconClass: "icon-jewelry",
+    },
+    {
+      name: "Tool & hardware",
+      iconClass: "icon-tool",
+    },
+    {
+      name: "Bestseller",
+      iconClass: "icon-best-seller",
+    },
+  ]);
+
+  const [searchCategories, setSearchCategories] = useState([
+    { label: "All categories", value: "" },
+    { label: "Apple products", value: "apple-products" },
+    { label: "Audio Equipments", value: "audio-equipments" },
+    { label: "Camera & Video", value: "camera-video" },
+    { label: "Game & Room Furniture", value: "game-room-furniture" },
+    { label: "Gaming Accessories", value: "gaming-accessories" },
+    { label: "Headphone", value: "headphone" },
+    { label: "Laptop & Tablet", value: "laptop-tablet" },
+    { label: "Server & Workstation", value: "server-workstation" },
+    { label: "Smartphone", value: "smartphone" },
+    { label: "Smartwatch", value: "smartwatch" },
+    { label: "Storage & Digital Devices", value: "storage-digital-devices" },
+    { label: "TV & Computer Screen", value: "tv-computer-screen" },
+  ]);
+
+  const [selectedCategory, setSelectedCategory] = useState("");
+
+  const handleChange = (e) => {
+    setSelectedCategory(e.target.value);
+  };
+
   return (
     <header className="tf-header style-3">
       <div className="inner-header">
@@ -19,6 +84,35 @@ const index = () => {
             <div className="col-md-6 d-none d-md-block">
               <div className="header-center justify-content-end">
                 <form action="#" className="form-search-product style-3">
+                <div className="select-category">
+                  <select
+                    name="product_cat"
+                    id="product_cat"
+                    className="dropdown_product_cat"
+                    value={selectedCategory}
+                    onChange={handleChange}
+                  >
+                    {searchCategories.map((cat, index) => (
+                      <option key={index} className="level-0" value={cat.value}>
+                        {cat.label}
+                      </option>
+                    ))}
+                  </select>
+
+                  <ul className="select-options">
+                    {categories.map((cat, index) => (
+                      <li
+                        key={index}
+                        className="link"
+                        rel={cat.value}
+                        onClick={() => setSelectedCategory(cat.value)}
+                      >
+                        <span>{cat.label}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <span className="br-line type-vertical bg-line"></span>
                   <fieldset>
                     <input type="text" placeholder="Search for products" />
                   </fieldset>
@@ -148,172 +242,132 @@ const index = () => {
               <nav className="category-menu active-item">
                 <div className="menu-category-menu-container">
                   <ul id="primary-menu" className="megamenu">
-                    <li className="menu-item">
-                      <a href="#">
-                        <i className="icon-clothing fs-20" />
-                        <span>Apparel</span>
-                      </a>
-                    </li>
-                    <li className="menu-item">
-                      <a href="#">
-                        <span className="icon">
-                          <svg
-                            width={20}
-                            height={20}
-                            viewBox="0 0 20 20"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <g clipPath="url(#clip0_1739_24868)">
-                              <mask
-                                id="mask0_1739_24868"
-                                style={{ maskType: "luminance" }}
-                                maskUnits="userSpaceOnUse"
-                                x={0}
-                                y={0}
+                    {categories.map((category, index) => (
+                      <li key={index} className="menu-item">
+                        <a href="#">
+                          {category.svgIcon ? (
+                            <span className="icon">
+                              <svg
                                 width={20}
                                 height={20}
+                                viewBox="0 0 20 20"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
                               >
-                                <path
-                                  d="M19.4999 19.5V0.500059H0.5V19.5H19.4999Z"
-                                  fill="white"
-                                  stroke="white"
-                                />
-                              </mask>
-                              <g mask="url(#mask0_1739_24868)">
-                                <path
-                                  d="M17.5037 10.9552C17.5037 15.6269 13.7165 19.4141 9.04482 19.4141C4.37311 19.4141 0.585938 15.6269 0.585938 10.9552C0.585938 6.28348 4.37311 2.49634 9.04482 2.49634"
-                                  stroke="black"
-                                  strokeMiterlimit={10}
-                                />
-                                <path
-                                  d="M10.336 10.9553C10.336 11.6694 9.75791 12.2483 9.04483 12.2483C8.33171 12.2483 7.75366 11.6694 7.75366 10.9553C7.75366 10.2412 8.33171 9.66232 9.04483 9.66232C9.75791 9.66232 10.336 10.2412 10.336 10.9553Z"
-                                  stroke="black"
-                                  strokeMiterlimit={10}
-                                  strokeLinecap="round"
-                                  strokeLinejoin="round"
-                                />
-                                <path
-                                  d="M14.6223 10.9551C14.6223 7.82548 12.2025 5.35873 9.03296 5.35873L9.04491 0.585891C14.5859 0.585891 19.4141 4.94236 19.4141 10.9551H14.6223Z"
-                                  stroke="black"
-                                  strokeMiterlimit={10}
-                                  strokeLinecap="round"
-                                  strokeLinejoin="round"
-                                />
-                                <path
-                                  d="M12.5154 10.9552C12.5154 12.8813 10.9562 14.4426 9.03282 14.4426C7.10939 14.4426 5.55017 12.8813 5.55017 10.9552C5.55017 9.02913 7.10939 7.46777 9.03282 7.46777C10.9562 7.46777 12.5154 9.02913 12.5154 10.9552Z"
-                                  stroke="black"
-                                  strokeMiterlimit={10}
-                                  strokeLinecap="round"
-                                  strokeLinejoin="round"
-                                />
-                                <path
-                                  d="M9.0448 16.6132V17.3433"
-                                  stroke="black"
-                                  strokeMiterlimit={10}
-                                  strokeLinecap="round"
-                                  strokeLinejoin="round"
-                                />
-                                <path
-                                  d="M2.6283 10.9551H3.35837"
-                                  stroke="black"
-                                  strokeMiterlimit={10}
-                                  strokeLinecap="round"
-                                  strokeLinejoin="round"
-                                />
-                                <path
-                                  d="M4.50122 15.3274L5.01747 14.8111"
-                                  stroke="black"
-                                  strokeMiterlimit={10}
-                                  strokeLinecap="round"
-                                  strokeLinejoin="round"
-                                />
-                                <path
-                                  d="M13.1156 14.8111L13.6318 15.3274"
-                                  stroke="black"
-                                  strokeMiterlimit={10}
-                                  strokeLinecap="round"
-                                  strokeLinejoin="round"
-                                />
-                                <path
-                                  d="M5.16481 6.86035L4.64856 6.3441"
-                                  stroke="black"
-                                  strokeMiterlimit={10}
-                                  strokeLinecap="round"
-                                  strokeLinejoin="round"
-                                />
-                              </g>
-                            </g>
-                            <defs>
-                              <clipPath id="clip0_1739_24868">
-                                <rect width={20} height={20} fill="white" />
-                              </clipPath>
-                            </defs>
-                          </svg>
-                        </span>
-                        <span>Automotive parts</span>
-                      </a>
-                    </li>
-                    <li className="menu-item">
-                      <a href="#">
-                        <i className="icon-beauti fs-20" />
-                        <span>Beauty &amp; personal care</span>
-                      </a>
-                    </li>
-                    <li className="menu-item">
-                      <a href="#">
-                        <i className="icon-computer fs-20" />
-                        <span>Consumer Electronics</span>
-                      </a>
-                    </li>
-                    <li className="menu-item">
-                      <a href="#">
-                        <i className="icon-sofa fs-20" />
-                        <span>Furniture</span>
-                      </a>
-                    </li>
-                    <li className="menu-item">
-                      <a href="#">
-                        <i className="icon-computer-wifi fs-20" />
-                        <span>Home products</span>
-                      </a>
-                    </li>
-                    <li className="menu-item">
-                      <a href="#">
-                        <i className="icon-machine fs-20" />
-                        <span>Machinery</span>
-                      </a>
-                    </li>
-                    <li className="menu-item">
-                      <a href="#">
-                        <i className="icon-jewelry fs-20" />
-                        <span>Timepieces, jewelry &amp; eyewear</span>
-                      </a>
-                    </li>
-                    <li className="menu-item">
-                      <a href="#">
-                        <i className="icon-tool fs-20" />
-                        <span>Tool &amp; hardware</span>
-                      </a>
-                    </li>
-                    <li className="menu-item">
-                      <a href="#">
-                        <i className="icon-best-seller fs-20" />
-                        <span>Bestseller</span>
-                      </a>
-                    </li>
+                                <g clipPath="url(#clip0_1739_24868)">
+                                  <mask
+                                    id="mask0_1739_24868"
+                                    style={{ maskType: "luminance" }}
+                                    maskUnits="userSpaceOnUse"
+                                    x={0}
+                                    y={0}
+                                    width={20}
+                                    height={20}
+                                  >
+                                    <path
+                                      d="M19.4999 19.5V0.500059H0.5V19.5H19.4999Z"
+                                      fill="white"
+                                      stroke="white"
+                                    />
+                                  </mask>
+                                  <g mask="url(#mask0_1739_24868)">
+                                    <path
+                                      d="M17.5037 10.9552C17.5037 15.6269 13.7165 19.4141 9.04482 19.4141C4.37311 19.4141 0.585938 15.6269 0.585938 10.9552C0.585938 6.28348 4.37311 2.49634 9.04482 2.49634"
+                                      stroke="black"
+                                      strokeMiterlimit={10}
+                                    />
+                                    <path
+                                      d="M10.336 10.9553C10.336 11.6694 9.75791 12.2483 9.04483 12.2483C8.33171 12.2483 7.75366 11.6694 7.75366 10.9553C7.75366 10.2412 8.33171 9.66232 9.04483 9.66232C9.75791 9.66232 10.336 10.2412 10.336 10.9553Z"
+                                      stroke="black"
+                                      strokeMiterlimit={10}
+                                      strokeLinecap="round"
+                                      strokeLinejoin="round"
+                                    />
+                                    <path
+                                      d="M14.6223 10.9551C14.6223 7.82548 12.2025 5.35873 9.03296 5.35873L9.04491 0.585891C14.5859 0.585891 19.4141 4.94236 19.4141 10.9551H14.6223Z"
+                                      stroke="black"
+                                      strokeMiterlimit={10}
+                                      strokeLinecap="round"
+                                      strokeLinejoin="round"
+                                    />
+                                    <path
+                                      d="M12.5154 10.9552C12.5154 12.8813 10.9562 14.4426 9.03282 14.4426C7.10939 14.4426 5.55017 12.8813 5.55017 10.9552C5.55017 9.02913 7.10939 7.46777 9.03282 7.46777C10.9562 7.46777 12.5154 9.02913 12.5154 10.9552Z"
+                                      stroke="black"
+                                      strokeMiterlimit={10}
+                                      strokeLinecap="round"
+                                      strokeLinejoin="round"
+                                    />
+                                    <path
+                                      d="M9.0448 16.6132V17.3433"
+                                      stroke="black"
+                                      strokeMiterlimit={10}
+                                      strokeLinecap="round"
+                                      strokeLinejoin="round"
+                                    />
+                                    <path
+                                      d="M2.6283 10.9551H3.35837"
+                                      stroke="black"
+                                      strokeMiterlimit={10}
+                                      strokeLinecap="round"
+                                      strokeLinejoin="round"
+                                    />
+                                    <path
+                                      d="M4.50122 15.3274L5.01747 14.8111"
+                                      stroke="black"
+                                      strokeMiterlimit={10}
+                                      strokeLinecap="round"
+                                      strokeLinejoin="round"
+                                    />
+                                    <path
+                                      d="M13.1156 14.8111L13.6318 15.3274"
+                                      stroke="black"
+                                      strokeMiterlimit={10}
+                                      strokeLinecap="round"
+                                      strokeLinejoin="round"
+                                    />
+                                    <path
+                                      d="M5.16481 6.86035L4.64856 6.3441"
+                                      stroke="black"
+                                      strokeMiterlimit={10}
+                                      strokeLinecap="round"
+                                      strokeLinejoin="round"
+                                    />
+                                  </g>
+                                </g>
+                                <defs>
+                                  <clipPath id="clip0_1739_24868">
+                                    <rect width={20} height={20} fill="white" />
+                                  </clipPath>
+                                </defs>
+                              </svg>
+                            </span>
+                          ) : (
+                            <i className={`${category.iconClass} fs-20`} />
+                          )}
+                          <span>{category.name}</span>
+                        </a>
+                      </li>
+                    ))}
                   </ul>
                 </div>
               </nav>
             </div>
             <nav className="main-nav-menu style-white">
               <ul className="nav-list">
-                <li className={`nav-item relative ${location==="/" ? "active" : ""}`}>
+                <li
+                  className={`nav-item relative ${
+                    location === "/" ? "active" : ""
+                  }`}
+                >
                   <Link to={"/"} className="item-link body-md-2 fw-semibold">
                     <span>Home</span>
                   </Link>
                 </li>
-                <li className={`nav-item relative ${location==="/products" ? "active" : ""}`}>
+                <li
+                  className={`nav-item relative ${
+                    location === "/products" ? "active" : ""
+                  }`}
+                >
                   <Link
                     to={"/products"}
                     className="item-link body-md-2 fw-semibold"
@@ -321,7 +375,11 @@ const index = () => {
                     <span>Products</span>
                   </Link>
                 </li>
-                <li className={`nav-item relative ${location==="/cart" ? "active" : ""}`}>
+                <li
+                  className={`nav-item relative ${
+                    location === "/cart" ? "active" : ""
+                  }`}
+                >
                   <Link
                     to={"/cart"}
                     className="item-link body-md-2 fw-semibold"
@@ -329,7 +387,11 @@ const index = () => {
                     <span>Cart</span>
                   </Link>
                 </li>
-                <li className={`nav-item relative ${location==="/orders" ? "active" : ""}`}>
+                <li
+                  className={`nav-item relative ${
+                    location === "/orders" ? "active" : ""
+                  }`}
+                >
                   <Link
                     to={"/orders"}
                     className="item-link body-md-2 fw-semibold"
@@ -337,7 +399,11 @@ const index = () => {
                     <span>Orders</span>
                   </Link>
                 </li>
-                <li className={`nav-item relative ${location==="/wishlist" ? "active" : ""}`}>
+                <li
+                  className={`nav-item relative ${
+                    location === "/wishlist" ? "active" : ""
+                  }`}
+                >
                   <Link
                     to={"/wishlist"}
                     className="item-link body-md-2 fw-semibold"
@@ -345,7 +411,11 @@ const index = () => {
                     <span>Wishlist</span>
                   </Link>
                 </li>
-                <li className={`nav-item relative ${location==="/profile" ? "active" : ""}`}>
+                <li
+                  className={`nav-item relative ${
+                    location === "/profile" ? "active" : ""
+                  }`}
+                >
                   <Link
                     to={"/profile"}
                     className="item-link body-md-2 fw-semibold"

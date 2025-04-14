@@ -24,18 +24,18 @@ const Footer = () => {
           // { label: "Shopping FAQs", href: "faq.html" },
         ],
       },
-      // {
-      //   title: "Popular categories",
-      //   links: [
-      //     { label: "Laptops & Computers", href: "shop-default.html" },
-      //     { label: "Cameras & Photography", href: "shop-default.html" },
-      //     { label: "Smart Phones & Tablets", href: "shop-default.html" },
-      //     { label: "Video Games & Consoles", href: "shop-default.html" },
-      //     { label: "TV & Audio", href: "shop-default.html" },
-      //     { label: "Gadgets", href: "shop-default.html" },
-      //     { label: "Waterproof Headphones", href: "shop-default.html" },
-      //   ],
-      // },
+      {
+        title: "Popular categories",
+        links: [
+          { label: "Laptops & Computers", href: "shop-default.html" },
+          { label: "Cameras & Photography", href: "shop-default.html" },
+          { label: "Smart Phones & Tablets", href: "shop-default.html" },
+          // { label: "Video Games & Consoles", href: "shop-default.html" },
+          // { label: "TV & Audio", href: "shop-default.html" },
+          // { label: "Gadgets", href: "shop-default.html" },
+          // { label: "Waterproof Headphones", href: "shop-default.html" },
+        ],
+      },
       {
         title: "Customer Care",
         links: [
