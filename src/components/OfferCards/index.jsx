@@ -15,7 +15,7 @@ const index = () => {
       subtitle: "catch big",
       description: "on the headphones",
       sale: "20%",
-      image: "images/collection/cls-category-1.jpg",
+      image: "/images/collection/cls-category-1.jpg",
       delay: "0s",
     },
     {
@@ -24,7 +24,7 @@ const index = () => {
       subtitle: "catch big",
       description: "on the cameras",
       sale: "15%",
-      image: "images/collection/cls-category-2.jpg",
+      image: "/images/collection/cls-category-2.jpg",
       delay: "0.1s",
     },
     {
@@ -33,7 +33,7 @@ const index = () => {
       subtitle: "catch big",
       description: "on the phones",
       sale: "28%",
-      image: "images/collection/cls-category-3.jpg",
+      image: "/images/collection/cls-category-3.jpg",
       delay: "0.2s",
     },
     {
@@ -42,7 +42,7 @@ const index = () => {
       subtitle: "catch big",
       description: "on the watchs",
       sale: "22%",
-      image: "images/collection/cls-category-4.jpg",
+      image: "/images/collection/cls-category-4.jpg",
       delay: "0.3s",
     },
   ]);
@@ -51,7 +51,7 @@ const index = () => {
     <div className="container py-5">
       <Swiper
         modules={[Pagination]}
-        pagination={{ clickable: true, el: ".sw-pagination-categories", }}
+        pagination={{ clickable: true, el: ".sw-pagination-categories" }}
         spaceBetween={30}
         breakpoints={{
           320: {
@@ -79,7 +79,10 @@ const index = () => {
               className="cls-category style-abs hover-img"
               data-wow-delay={item.delay}
             >
-              <a href="product-detail.html" className="img-box img-style d-block">
+              <a
+                href="product-detail.html"
+                className="img-box img-style d-block"
+              >
                 <img src={item.image} alt={item.title} className="lazyload" />
               </a>
               <div className="content">
@@ -88,7 +91,10 @@ const index = () => {
                   <p className="main-title-2 fw-bold">{item.title}</p>
                   <p className="product-title-2">{item.description}</p>
                 </div>
-                <a href="product-detail.html" className="tf-btn-icon style-white">
+                <a
+                  href="product-detail.html"
+                  className="tf-btn-icon style-white"
+                >
                   <i className="icon-circle-chevron-right" />
                   <span className="font-2">Shop now</span>
                 </a>

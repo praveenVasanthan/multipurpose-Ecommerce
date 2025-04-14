@@ -4,7 +4,7 @@ import APP_CONSTANTS from "../../config/AppConstants";
 const Footer = () => {
   const [footerData, setFooterData] = useState({
     logo: {
-      image: APP_CONSTANTS.App_Logo || "images/logo.svg",
+      image: APP_CONSTANTS.App_Logo || "/images/logo.svg",
       url: "index.html",
     },
     paymentMethods: [
@@ -119,7 +119,11 @@ const Footer = () => {
                                 <span className="icon">
                                   <i className={item.icon} />
                                 </span>
-                                <a href={item.href} className="link" target="_blank">
+                                <a
+                                  href={item.href}
+                                  className="link"
+                                  target="_blank"
+                                >
                                   {item.text}
                                 </a>
                               </>
@@ -144,7 +148,7 @@ const Footer = () => {
             <div className="ft-center justify-content-xxl-between">
               <p className="notice text-white">
                 <span className="main-title fw-semibold">
-                  <img src="images/mail.svg" alt="" /> 10% Off Your First Order
+                  <img src="/images/mail.svg" alt="" /> 10% Off Your First Order
                 </span>
                 <span className="body-text-3">
                   Be the first to know about offers, new products and discounted
