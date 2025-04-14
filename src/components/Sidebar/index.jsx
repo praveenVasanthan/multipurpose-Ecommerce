@@ -33,57 +33,140 @@ const index = () => {
   ];
 
   return (
-    <div className="offcanvas offcanvas-start canvas-mb" id="mobileMenu">
-      <span className="icon-close btn-close-mb link" data-bs-dismiss="offcanvas" />
-      <div className="logo-site">
-        <Link to="/products">
-          <img src={APP_CONSTANTS.App_Logo} alt="Site Logo" />
-        </Link>
-      </div>
-      <div className="mb-canvas-content">
-        <div className="mb-body">
-          <div className="flat-animate-tab">
-            <div className="tab-content">
-              <div className="tab-pane active show" id="main-menu" role="tabpanel">
-                <div className="mb-content-top">
-                  <ul className="nav-ul-mb" id="wrapper-menu-navigation">
-                    {menuItems.map((item, idx) => (
-                      <li
-                        key={idx}
-                        className={`nav-mb-item ${location === item.id ? "active" : ""}`}
-                      >
-                        <Link
-                          to={`${item.id}`}
-                          className="collapsed mb-menu-link"
-                        //   data-bs-toggle="collapse"
-                          aria-expanded="true"
+    <>
+      <div className="offcanvas offcanvas-start canvas-mb" id="mobileMenu">
+        <span
+          className="icon-close btn-close-mb link"
+          data-bs-dismiss="offcanvas"
+        />
+        <div className="logo-site">
+          <Link to="/products">
+            <img src={APP_CONSTANTS.App_Logo} alt="Site Logo" />
+          </Link>
+        </div>
+        <div className="mb-canvas-content">
+          <div className="mb-body">
+            <div className="flat-animate-tab">
+              <div className="tab-content">
+                <div
+                  className="tab-pane active show"
+                  id="main-menu"
+                  role="tabpanel"
+                >
+                  <div className="mb-content-top">
+                    <ul className="nav-ul-mb" id="wrapper-menu-navigation">
+                      {menuItems.map((item, idx) => (
+                        <li
+                          key={idx}
+                          className={`nav-mb-item ${
+                            location === item.id ? "active" : ""
+                          }`}
                         >
-                          <span>{item.label}</span>
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div className="mb-other-content">
-                  <ul className="mb-info">
-                    {contactInfo.map((info, idx) => (
-                      <li key={idx}>
-                        <p>
-                          {info.type}:
-                          <a target="_blank" rel="noreferrer" href={info.href}>
-                            <span className="fw-medium">{info.value}</span>
-                          </a>
-                        </p>
-                      </li>
-                    ))}
-                  </ul>
+                          <Link
+                            to={`${item.id}`}
+                            className="collapsed mb-menu-link"
+                            //   data-bs-toggle="collapse"
+                            aria-expanded="true"
+                          >
+                            <span>{item.label}</span>
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div className="mb-other-content">
+                    <ul className="mb-info">
+                      {contactInfo.map((info, idx) => (
+                        <li key={idx}>
+                          <p>
+                            {info.type}:
+                            <a
+                              target="_blank"
+                              rel="noreferrer"
+                              href={info.href}
+                            >
+                              <span className="fw-medium">{info.value}</span>
+                            </a>
+                          </p>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+
+      {/* Search canvas */}
+      <div className="offcanvas offcanvas-top offcanvas-search" id="search">
+        <div className="offcanvas-content">
+          <div className="popup-header">
+            <button
+              className="icon-close icon-close-popup link"
+              data-bs-dismiss="offcanvas"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div className="container">
+            <div className="row justify-content-center">
+              <div className="col-lg-8">
+                <div className="looking-for-wrap">
+                  <h3 className="heading fw-semibold text-center">
+                    What are you looking for?
+                  </h3>
+                  <form action="#" className="form-search">
+                    <fieldset>
+                      <input
+                        className=""
+                        type="text"
+                        placeholder="Search for anything"
+                        name="text"
+                        tabIndex={2}
+                        defaultValue=""
+                        aria-required="true"
+                        required=""
+                      />
+                    </fieldset>
+                    <button type="submit" className="button-submit">
+                      <i className="icon-search" />
+                    </button>
+                  </form>
+                  <div className="popular-searches justify-content-md-center">
+                    <span className="text fw-semibold body-text-3">
+                      Popular searches:
+                    </span>
+                    <ul>
+                      <li>
+                        <a className="link body-text-3 fw-medium" href="#">
+                          Featured
+                        </a>
+                      </li>
+                      <li>
+                        <a className="link body-text-3 fw-medium" href="#">
+                          Trendy
+                        </a>
+                      </li>
+                      <li>
+                        <a className="link body-text-3 fw-medium" href="#">
+                          New
+                        </a>
+                      </li>
+                      <li>
+                        <a className="link body-text-3 fw-medium" href="#">
+                          Sale
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
   );
 };
 

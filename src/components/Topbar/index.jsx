@@ -84,35 +84,26 @@ const index = () => {
             <div className="col-md-6 d-none d-md-block">
               <div className="header-center justify-content-end">
                 <form action="#" className="form-search-product style-3">
-                <div className="select-category">
-                  <select
-                    name="product_cat"
-                    id="product_cat"
-                    className="dropdown_product_cat"
-                    value={selectedCategory}
-                    onChange={handleChange}
-                  >
-                    {searchCategories.map((cat, index) => (
-                      <option key={index} className="level-0" value={cat.value}>
-                        {cat.label}
-                      </option>
-                    ))}
-                  </select>
-
-                  <ul className="select-options">
-                    {categories.map((cat, index) => (
-                      <li
-                        key={index}
-                        className="link"
-                        rel={cat.value}
-                        onClick={() => setSelectedCategory(cat.value)}
-                      >
-                        <span>{cat.label}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <span className="br-line type-vertical bg-line"></span>
+                  <div className="select-category">
+                    <select
+                      name="product_cat"
+                      id="product_cat"
+                      className="dropdown_product_cat"
+                      value={selectedCategory}
+                      onChange={handleChange}
+                    >
+                      {searchCategories.map((cat, index) => (
+                        <option
+                          key={index}
+                          className="level-0"
+                          value={cat.value}
+                        >
+                          {cat.label}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+                  <span className="br-line type-vertical bg-line"></span>
                   <fieldset>
                     <input type="text" placeholder="Search for products" />
                   </fieldset>
@@ -125,6 +116,32 @@ const index = () => {
             <div className="col-md-3 col-4 d-flex align-items-center justify-content-end">
               <div className="header-right">
                 <ul className="nav-icon justify-content-xl-center">
+                  <li className="nav-support d-block d-xl-none">
+                    <Link
+                      to={"#search"}
+                      className="link link-fill nav-icon-item relative"
+                      data-bs-toggle="offcanvas"
+                      aria-controls="search"
+                    >
+                      <span>
+                        <svg
+                          width={26}
+                          height={26}
+                          viewBox="0 0 20 21"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            stroke="#333E48"
+                            strokeWidth="0.3"
+                            d="M17.795 17.8101L13.5309 13.5225C14.9671 12.072 15.7894 10.1219 15.8267 8.07859C15.864 6.03526 15.1132 4.05635 13.7309 2.55423C12.3486 1.05211 10.4414 0.142631 8.40671 0.0154012C6.37204 -0.111829 4.36687 0.552966 2.80908 1.87124C1.25129 3.18952 0.261042 5.05958 0.0447082 7.09172C-0.171625 9.12385 0.402641 11.1613 1.64783 12.7795C2.89302 14.3976 4.71308 15.4716 6.72871 15.7777C8.74435 16.0838 10.8001 15.5983 12.4674 14.4225L16.8162 18.7977C16.8809 18.8622 16.9576 18.9132 17.042 18.9479C17.1264 18.9826 17.2167 19.0003 17.3079 19C17.3991 18.9997 17.4893 18.9814 17.5735 18.9461C17.6576 18.9109 17.734 18.8593 17.7982 18.7945C17.8625 18.7296 17.9134 18.6527 17.948 18.5682C17.9826 18.4836 18.0003 18.393 18 18.3016C17.9997 18.2102 17.9814 18.1197 17.9463 18.0354C17.9111 17.951 17.8597 17.8745 17.795 17.8101ZM1.49742 7.97499C1.50151 6.69476 1.88395 5.44444 2.59643 4.38196C3.30892 3.31948 4.31949 2.49252 5.50052 2.00544C6.68156 1.51836 7.98009 1.39299 9.23213 1.64527C10.4842 1.89754 11.6336 2.51614 12.5351 3.42285C13.4367 4.32957 14.0501 5.48378 14.2977 6.73971C14.5454 7.99565 14.4162 9.29694 13.9265 10.4793C13.4369 11.6617 12.6087 12.6722 11.5466 13.383C10.4844 14.0939 9.23598 14.4733 7.95891 14.4733C7.10897 14.4721 6.26759 14.303 5.48285 13.9757C4.6981 13.6485 3.98535 13.1694 3.38531 12.566C2.78528 11.9625 2.30971 11.2465 1.98578 10.4588C1.66185 9.67104 1.49591 8.82703 1.49742 7.97499Z"
+                            fill="#333E48"
+                          ></path>
+                        </svg>
+                      </span>
+                      <p className="body-small">Search</p>
+                    </Link>
+                  </li>
                   <li className="nav-account">
                     <a
                       href="#authModal"
@@ -377,17 +394,17 @@ const index = () => {
                 </li>
                 <li
                   className={`nav-item relative ${
-                    location === "/cart" ? "active" : ""
+                    location === "/contact" ? "active" : ""
                   }`}
                 >
                   <Link
-                    to={"/cart"}
+                    to={"/contact"}
                     className="item-link body-md-2 fw-semibold"
                   >
-                    <span>Cart</span>
+                    <span>Contact</span>
                   </Link>
                 </li>
-                <li
+                {/* <li
                   className={`nav-item relative ${
                     location === "/orders" ? "active" : ""
                   }`}
@@ -422,7 +439,7 @@ const index = () => {
                   >
                     <span>Profile</span>
                   </Link>
-                </li>
+                </li> */}
               </ul>
             </nav>
           </div>
