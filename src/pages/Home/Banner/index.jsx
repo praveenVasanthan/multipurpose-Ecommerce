@@ -10,8 +10,8 @@ const featuredSectionData = [
   {
     mainProduct: [
       {
-        backgroundImage: "images/banner/banner-13.jpg",
-        image: "images/item/laptop-2.png",
+        backgroundImage: "/images/banner/banner-13.jpg",
+        image: "/images/item/laptop-2.png",
         price: "$450",
         subtitle: "Let power flow through you",
         name: "Dell G5 Gaming Laptop",
@@ -21,7 +21,7 @@ const featuredSectionData = [
             id: 1,
             category: "Headphone",
             name: "Apple AirPods Max – Premium Over-Ear Wireless Headphones (Green)",
-            image: "images/product/product-83.jpg",
+            image: "/images/product/product-83.jpg",
             newPrice: "$51.500",
             oldPrice: "$64.990",
             link: "/products",
@@ -30,7 +30,7 @@ const featuredSectionData = [
             id: 2,
             category: "Smart TVs",
             name: 'Amazon Fire TV Omni (65") – 4K UHD Smart TV with Hands-Free Alexa Control',
-            image: "images/product/product-12.jpg",
+            image: "/images/product/product-12.jpg",
             newPrice: "$68.499",
             oldPrice: "$85.999",
             link: "/products:id",
@@ -38,8 +38,8 @@ const featuredSectionData = [
         ],
       },
       {
-        backgroundImage: "images/banner/banner-6.jpg",
-        image: "images/item/headphone.png",
+        backgroundImage: "/images/banner/banner-6.jpg",
+        image: "/images/item/headphone.png",
         price: "$680",
         subtitle: "Feel The Music",
         name: "HeadSet & Head Phone",
@@ -49,7 +49,7 @@ const featuredSectionData = [
             id: 3,
             category: "Camera",
             name: "Nikon D5600 – DSLR Camera with 18-55mm VR Lens Kit",
-            image: "images/product/product-13.jpg",
+            image: "/images/product/product-13.jpg",
             newPrice: "$45.499",
             oldPrice: "$59.990",
             link: "/products",
@@ -58,7 +58,7 @@ const featuredSectionData = [
             id: 4,
             category: "Smartphones",
             name: "Samsung Galaxy S22 Ultra 5G – 256GB",
-            image: "images/product/product-14.jpg",
+            image: "/images/product/product-14.jpg",
             newPrice: "$74.499",
             oldPrice: "$89.999",
             link: "/products:id",
@@ -92,7 +92,7 @@ const index = () => {
               style={{
                 backgroundImage: `url(${mains.backgroundImage})`,
                 backgroundSize: "cover",
-                backgroundPosition: "center"
+                backgroundPosition: "center",
               }}
             >
               <div className="container">
@@ -107,7 +107,9 @@ const index = () => {
                         src={mains.image}
                         alt={mains.name}
                         style={{
-                          objectFit: "contain", maxHeight: "320px", width: "100%"
+                          objectFit: "contain",
+                          maxHeight: "320px",
+                          width: "100%",
                         }}
                       />
                     </Link>

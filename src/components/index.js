@@ -15,3 +15,5 @@ export { default as Loader } from "./Loader";
 export { default as OfferCards } from "./OfferCards";
 //Special Offer
 export { default as BestOffer } from "./BestOffer";
+// Bread crumb
+export { default as BreadCrumb } from "./BreadCrumb";

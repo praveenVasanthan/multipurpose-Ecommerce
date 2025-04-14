@@ -11,7 +11,7 @@ const index = () => {
       price: "80.00",
       rating: 3,
       reviews: 74,
-      imgMain: "images/product/product-8.jpg",
+      imgMain: "/images/product/product-8.jpg",
     },
     {
       id: 2,
@@ -19,7 +19,7 @@ const index = () => {
       price: "80.00",
       rating: 4,
       reviews: 11,
-      imgMain: "images/product/product-9.jpg",
+      imgMain: "/images/product/product-9.jpg",
     },
     {
       id: 3,
@@ -27,7 +27,7 @@ const index = () => {
       price: "80.00",
       rating: 3,
       reviews: 148,
-      imgMain: "images/product/product-34.jpg",
+      imgMain: "/images/product/product-34.jpg",
     },
     {
       id: 4,
@@ -35,7 +35,7 @@ const index = () => {
       price: "80.00",
       rating: 5,
       reviews: 18,
-      imgMain: "images/product/product-11.jpg",
+      imgMain: "/images/product/product-11.jpg",
     },
     {
       id: 5,
@@ -43,7 +43,7 @@ const index = () => {
       price: "80.00",
       rating: 3,
       reviews: 168,
-      imgMain: "images/product/product-137.jpg",
+      imgMain: "/images/product/product-137.jpg",
     },
   ]);
   return (

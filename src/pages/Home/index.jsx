@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import {
-  Banner,
   ServiceFeatures,
   CardCarosel,
   OfferCards,
   BestOffer,
 } from "@components/index.js";
+import Banner from "./Banner";
 
 const index = () => {
   const [caroselData, setCaroselData] = useState({
@@ -215,6 +215,7 @@ const index = () => {
       },
     ],
   });
+
   const [bannerData, setBannerData] = useState({
     link: "/product-detail",
     img1: "/images/item/camera-2.png",

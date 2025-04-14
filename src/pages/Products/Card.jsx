@@ -6,7 +6,7 @@ const Card = ({ product }) => {
   return (
     <div className="card-product">
       <div className="card-product-wrapper">
-        <Link to={`/products/${product.id}`} className="product-img">
+        <Link to={`/product/${product.id}`} className="product-img">
           <img
             className="img-product"
             src={product.imgMain}
@@ -45,7 +45,7 @@ const Card = ({ product }) => {
         <div className="box-title">
           <div>
             <Link
-              to={`/products/${product.id}`}
+              to={`/product/${product.id}`}
               className="name-product body-md-2 fw-semibold text-secondary link"
             >
               {product.title}

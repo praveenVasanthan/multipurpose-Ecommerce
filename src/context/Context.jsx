@@ -3,64 +3,21 @@ import React, { createContext, useState } from "react";
 const MyContext = createContext();
 
 const MyProvider = ({ children }) => {
-  const [webName, setWebName] = useState("Mobile Shop");
-  // const [transfer, setTransfer] = useState(null);
-  // const [videoResponseData, setVideoResponseData] = useState();
-  // const [sendId, setSendId] = useState("");
-  // const [page, setPage] = useState();
-  // const [userDetails, setUserDetails] = useState();
-  // const [superAdmin, setSuperAdmin] = useState(
-  //   localStorage.getItem("superadmin") || false
-  // );
-  // const [shopName, setShopName] = useState("");
-  // const [isAdmin, setIsAdmin] = useState("");
-
-  // useEffect(() => {
-  //   const BasicUserDetails = async () => {
-  //     const response = await getBasicUserDetails();
-  //     setUserDetails(response.related_entity?.id);
-  //     setShopName(response.related_entity?.identity);
-  //     setIsAdmin(response.is_staff);
-  //   };
-  //   BasicUserDetails();
-  // }, [userDetails, shopName]);
-
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     const result = localStorage.getItem("superadmin");
-  //     setSuperAdmin(result);
-  //   };
-
-  //   const handleTokenChange = () => fetchData();
-  //   window.addEventListener("userChange", handleTokenChange);
-
-  //   return () => window.removeEventListener("userChange", handleTokenChange);
-  // }, []);
+  const [categories, setCategories] = useState([
+    { id: 1, title: "Consumer Electronics", value: "consumer_electronics" },
+    { id: 2, title: "Home products", value: "home_products" },
+    { id: 3, title: "Tool & hardware", value: "tool_hardware" },
+    {
+      id: 4,
+      title: "Computers & Accessories",
+      value: "computers_accessories",
+    },
+    { id: 5, title: "Gaming accessories", value: "gaming_accessories" },
+    { id: 6, title: "Electronics", value: "electronics" },
+  ]);
 
   return (
-    <MyContext.Provider
-      value={{
-        webName,
-        setWebName,
-        // transfer,
-        // setTransfer,
-        // videoResponseData,
-        // setVideoResponseData,
-        // setSendId,
-        // sendId,
-        // setPage,
-        // page,
-        // superAdmin,
-        // setSuperAdmin,
-        // userDetails,
-        // setUserDetails,
-        // isAdmin,
-        // shopName,
-        // setShopName,
-      }}
-    >
-      {children}
-    </MyContext.Provider>
+    <MyContext.Provider value={{ categories }}>{children}</MyContext.Provider>
   );
 };
 

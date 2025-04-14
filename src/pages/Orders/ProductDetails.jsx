@@ -81,7 +81,7 @@ const ProductDetails = () => {
             {/* ---------------------------------- */}
 
             <div className="product-box-btn">
-              <Link to={`/products/1`} className="tf-btn text-white">
+              <Link to={`/product/1`} className="tf-btn text-white">
                 Rate this product
               </Link>
             </div>

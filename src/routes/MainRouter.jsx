@@ -1,80 +1,168 @@
 import React from "react";
+import { createBrowserRouter, Link } from "react-router-dom";
+import MainLayout from "@layouts/MainLayout";
+import AccountLayout from "@layouts/AccountLayout";
+import CheckOutLayout from "@layouts/CheckOutLayout";
+import ErrorBoundary from "./ErrorBoundary";
 import {
   Home,
   Products,
+  ProductDetail,
   Cart,
+  CheckOut,
+  Confirmation,
   Orders,
   Wishlist,
-  ProductDetail,
+  Contact,
 } from "@pages/index.js";
-import MainLayout from "@layouts/MainLayout";
-import ErrorBoundary from "./ErrorBoundary";
-import AccountLayout from "../layouts/AccountLayout";
-import AccountDetails from "../pages/Profile/AccountDetails";
-import AccountAddress from "../pages/Profile/AccountAddress";
-import OrderHistory from "../pages/Profile/OrderHistory";
-import CheckOutLayout from "../layouts/CheckOutLayout";
-import { CheckOut, Confirmation } from "../pages";
+import AccountDetails from "@pages/Profile/AccountDetails";
+import AccountAddress from "@pages/Profile/AccountAddress";
+import OrderHistory from "@pages/Profile/OrderHistory";
 
-const MainRouter = [
+const MainRouter = createBrowserRouter([
   {
     path: "/",
+    element: <MainLayout />,
     errorElement: <ErrorBoundary />,
+    handle: {
+      crumb: () => (
+        <Link to="/" className="body-small link">
+          Home
+        </Link>
+      ),
+    },
     children: [
       {
-        path: "/",
-        element: <MainLayout />,
+        index: true,
+        element: <Home />,
+      },
+      {
+        path: "products",
+        element: <Products />,
+        handle: {
+          crumb: () => (
+            <Link to="/products" className="body-small link">
+              Products
+            </Link>
+          ),
+        },
         children: [
           {
-            path: "/",
-            element: <Home />,
+            path: ":category",
+            element: <Products />,
+            handle: {
+              crumb: () => <span className="body-small">Category</span>,
+            },
+          },
+        ],
+      },
+      {
+        path: "product/:id",
+        element: <ProductDetail />,
+        handle: {
+          crumb: () => <span className="body-small">Product Detail</span>,
+        },
+      },
+      {
+        path: "cart",
+        element: <CheckOutLayout />,
+        handle: {
+          crumb: () => (
+            <Link to="/cart" className="body-small link">
+              Cart
+            </Link>
+          ),
+        },
+        children: [
+          {
+            index: true,
+            element: <Cart />,
           },
           {
-            path: "/products",
-            children: [
-              { path: "", element: <Products /> },
-              { path: ":id", element: <ProductDetail /> },
-            ],
+            path: "checkout",
+            element: <CheckOut />,
+            handle: {
+              crumb: () => <span className="body-small">Checkout</span>,
+            },
           },
           {
-            path: "/cart",
-            element: <CheckOutLayout />,
-            children: [
-              { path: "", element: <Cart /> },
-              { path: "checkout", element: <CheckOut /> },
-              { path: "confirmation", element: <Confirmation /> },
-            ],
+            path: "confirmation",
+            element: <Confirmation />,
+            handle: {
+              crumb: () => <span className="body-small">Confirmation</span>,
+            },
+          },
+        ],
+      },
+      {
+        path: "orders",
+        element: <Orders />,
+        handle: {
+          crumb: () => (
+            <Link to="/orders" className="body-small link">
+              Orders
+            </Link>
+          ),
+        },
+      },
+      {
+        path: "wishlist",
+        element: <Wishlist />,
+        handle: {
+          crumb: () => (
+            <Link to="/wishlist" className="body-small link">
+              Wishlist
+            </Link>
+          ),
+        },
+      },
+      {
+        path: "contact",
+        element: <Contact />,
+        handle: {
+          crumb: () => (
+            <Link to="/contact" className="body-small link">
+              Contact
+            </Link>
+          ),
+        },
+      },
+      {
+        path: "profile",
+        element: <AccountLayout />,
+        handle: {
+          crumb: () => (
+            <Link to="/profile" className="body-small link">
+              Profile
+            </Link>
+          ),
+        },
+        children: [
+          {
+            index: true,
+            element: <AccountDetails />,
+            handle: {
+              crumb: () => <span className="body-small">Account Details</span>,
+            },
           },
           {
-            path: "/orders",
-            element: <Orders />,
+            path: "address",
+            element: <AccountAddress />,
+            handle: {
+              crumb: () => <span className="body-small">Address</span>,
+            },
           },
           {
-            path: "/wishlist",
-            element: <Wishlist />,
-          },
-          {
-            path: "/profile",
-            element: <AccountLayout />,
-            children: [
-              {
-                path: "",
-                element: <AccountDetails />,
-              },
-              {
-                path: "address",
-                element: <AccountAddress />,
-              },
-              {
-                path: "orders",
-                element: <OrderHistory />,
-              },
-            ],
+            path: "orders",
+            element: <OrderHistory />,
+            handle: {
+              crumb: () => <span className="body-small">Order History</span>,
+            },
           },
         ],
       },
     ],
   },
-];
+]);
 
 export default MainRouter;
