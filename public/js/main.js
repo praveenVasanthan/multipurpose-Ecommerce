@@ -778,7 +778,7 @@
     efectparalax();
     wishlist();
     handleSidebarFilter();
-    customSelect();
+    // customSelect();
     clickActive();
     formatCardNumber();
     changeBgImg();

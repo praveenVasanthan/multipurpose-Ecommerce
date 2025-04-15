@@ -1,80 +1,82 @@
 import React, { useState } from "react";
-import CardCarosel from "@components/CardCarosel"
+import CardCarosel from "@components/CardCarosel";
 
 const index = () => {
-    const [recentlyViewed, setRecentlyViewed] = useState({
-        title: "Recently Viewed",
-        values: [
-          {
-            id: 1,
-            title: "Samsung Galaxy Note 10+, 256GB, Aura Black - Fully Unlocked",
-            price: "80.00",
-            rating: 3,
-            reviews: 74,
-            imgMain: "/images/product/product-8.jpg",
-          },
-          {
-            id: 2,
-            title: "Sony ZX Series Wired On-Ear Headphones, Black MDR-ZX110",
-            price: "80.00",
-            rating: 4,
-            reviews: 11,
-            imgMain: "/images/product/product-9.jpg",
-          },
-          {
-            id: 3,
-            title: "Garmin fenix 7, adventure smartwatch, rugged outdoor",
-            price: "80.00",
-            rating: 3,
-            reviews: 148,
-            imgMain: "/images/product/product-34.jpg",
-          },
-          {
-            id: 4,
-            title: "Garmin fenix 7, adventure smartwatch, rugged outdoor",
-            price: "80.00",
-            rating: 5,
-            reviews: 18,
-            imgMain: "/images/product/product-11.jpg",
-          },
-          {
-            id: 5,
-            title: "CORSAIR TC60 Fabric Gaming Chair - Relaxed Fit - Grey",
-            price: "80.00",
-            rating: 3,
-            reviews: 168,
-            imgMain: "/images/product/product-137.jpg",
-          },
-          {
-            id: 6,
-            title: "Garmin fenix 7, adventure smartwatch, rugged outdoor",
-            price: "80.00",
-            rating: 3,
-            reviews: 148,
-            imgMain: "/images/product/product-34.jpg",
-          },
-          {
-            id: 7,
-            title: "Garmin fenix 7, adventure smartwatch, rugged outdoor",
-            price: "80.00",
-            rating: 5,
-            reviews: 18,
-            imgMain: "/images/product/product-11.jpg",
-          },
-          {
-            id: 8,
-            title: "CORSAIR TC60 Fabric Gaming Chair - Relaxed Fit - Grey",
-            price: "80.00",
-            rating: 3,
-            reviews: 168,
-            imgMain: "/images/product/product-137.jpg",
-          },
-        ],
-      });
+  const [recentlyViewed, setRecentlyViewed] = useState({
+    id: 6,
+    title: "Recently Viewed",
+    values: [
+      {
+        id: 1,
+        title: "Samsung Galaxy Note 10+, 256GB, Aura Black - Fully Unlocked",
+        price: "80.00",
+        rating: 3,
+        reviews: 74,
+        imgMain: "/images/product/product-8.jpg",
+      },
+      {
+        id: 2,
+        title: "Sony ZX Series Wired On-Ear Headphones, Black MDR-ZX110",
+        price: "80.00",
+        rating: 4,
+        reviews: 11,
+        imgMain: "/images/product/product-9.jpg",
+      },
+      {
+        id: 3,
+        title: "Garmin fenix 7, adventure smartwatch, rugged outdoor",
+        price: "80.00",
+        rating: 3,
+        reviews: 148,
+        imgMain: "/images/product/product-34.jpg",
+      },
+      {
+        id: 4,
+        title: "Garmin fenix 7, adventure smartwatch, rugged outdoor",
+        price: "80.00",
+        rating: 5,
+        reviews: 18,
+        imgMain: "/images/product/product-11.jpg",
+      },
+      {
+        id: 5,
+        title: "CORSAIR TC60 Fabric Gaming Chair - Relaxed Fit - Grey",
+        price: "80.00",
+        rating: 3,
+        reviews: 168,
+        imgMain: "/images/product/product-137.jpg",
+      },
+      {
+        id: 6,
+        title: "Garmin fenix 7, adventure smartwatch, rugged outdoor",
+        price: "80.00",
+        rating: 3,
+        reviews: 148,
+        imgMain: "/images/product/product-34.jpg",
+      },
+      {
+        id: 7,
+        title: "Garmin fenix 7, adventure smartwatch, rugged outdoor",
+        price: "80.00",
+        rating: 5,
+        reviews: 18,
+        imgMain: "/images/product/product-11.jpg",
+      },
+      {
+        id: 8,
+        title: "CORSAIR TC60 Fabric Gaming Chair - Relaxed Fit - Grey",
+        price: "80.00",
+        rating: 3,
+        reviews: 168,
+        imgMain: "/images/product/product-137.jpg",
+      },
+    ],
+  });
 
-      const [mapData, setMapData] = useState({
-        mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11678.740279919208!2d-75.53672684990242!3d39.167930537914174!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c77b533177974f%3A0xd017ee22f8759803!2sWesley%20College%20%2F%20DSU!5e0!3m2!1sen!2s!4v1741056536407!5m2!1sen!2s",
-      });
+  const [mapData, setMapData] = useState({
+    mapEmbedUrl:
+      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11678.740279919208!2d-75.53672684990242!3d39.167930537914174!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c77b533177974f%3A0xd017ee22f8759803!2sWesley%20College%20%2F%20DSU!5e0!3m2!1sen!2s!4v1741056536407!5m2!1sen!2s",
+  });
   return (
     <>
       <section className="tf-sp-2">
@@ -162,7 +164,7 @@ const index = () => {
           </div>
         </div>
       </section>
-      <CardCarosel caroselData= {recentlyViewed} />
+      <CardCarosel caroselData={recentlyViewed} />
     </>
   );
 };

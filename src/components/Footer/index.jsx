@@ -1,7 +1,11 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import APP_CONSTANTS from "../../config/AppConstants";
+import { Link } from "react-router-dom";
+import { MyContext } from "@context/Context";
 
 const Footer = () => {
+  const { categories } = useContext(MyContext);
+
   const [footerData, setFooterData] = useState({
     logo: {
       image: APP_CONSTANTS.App_Logo || "/images/logo.svg",
@@ -22,18 +26,6 @@ const Footer = () => {
           { label: "Cookie Settings", href: "privacy.html" },
           // { label: "Privacy Notice", href: "privacy.html" },
           // { label: "Shopping FAQs", href: "faq.html" },
-        ],
-      },
-      {
-        title: "Popular categories",
-        links: [
-          { label: "Laptops & Computers", href: "shop-default.html" },
-          { label: "Cameras & Photography", href: "shop-default.html" },
-          { label: "Smart Phones & Tablets", href: "shop-default.html" },
-          // { label: "Video Games & Consoles", href: "shop-default.html" },
-          // { label: "TV & Audio", href: "shop-default.html" },
-          // { label: "Gadgets", href: "shop-default.html" },
-          // { label: "Waterproof Headphones", href: "shop-default.html" },
         ],
       },
       {
@@ -101,6 +93,25 @@ const Footer = () => {
               </div>
 
               <ul className="ft-link-wrap w-100 tf-grid-layout md-col-2 lg-col-4">
+                <li className="footer-col-block">
+                  <h6 className="ft-heading footer-heading-mobile fw-semibold">
+                    Popular categories
+                  </h6>
+                  <div className="tf-collapse-content">
+                    <ul className={`ft-menu-list`}>
+                      {categories.map((category) => (
+                        <li key={category.id}>
+                          <Link
+                            to={`/products/${category.value}`}
+                            className="link"
+                          >
+                            {category.title}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </li>
                 {footerData.sections.map((section, idx) => (
                   <li className="footer-col-block" key={idx}>
                     <h6 className="ft-heading footer-heading-mobile fw-semibold">
