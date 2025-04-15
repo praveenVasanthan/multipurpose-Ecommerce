@@ -9,6 +9,7 @@ import Banner from "./Banner";
 
 const index = () => {
   const [caroselData, setCaroselData] = useState({
+    id: 1,
     title: "Recently Viewed",
     values: [
       {
@@ -78,6 +79,7 @@ const index = () => {
     ],
   });
   const [trendProducts, setTrendProducts] = useState({
+    id: 2,
     title: "Trending Products",
     values: [
       {
@@ -147,6 +149,7 @@ const index = () => {
     ],
   });
   const [newArrivals, setNewArrivals] = useState({
+    id: 3,
     title: "New Arrivals",
     values: [
       {

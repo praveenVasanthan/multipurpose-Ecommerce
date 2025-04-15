@@ -32,6 +32,7 @@ const index = () => {
   });
 
   const [similarItems, setSimilarItems] = useState({
+    id: 4,
     title: "Discover Similar Items",
     values: [
       {

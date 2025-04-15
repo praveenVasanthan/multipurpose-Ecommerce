@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
@@ -8,16 +8,20 @@ import { Link } from "react-router-dom";
 import APP_CONSTANTS from "../../config/AppConstants";
 
 const index = ({ caroselData }) => {
+  const nextButtonClass = `swiper-button-prev-${caroselData.id}`;
+  const prevButtonClass = `swiper-button-next-${caroselData.id}`;
+  const paginationClass = `swiper-pagination-${caroselData.id}`;
+
   return (
     <section className="tf-sp-2 pt-0">
       <div className="container">
         <div className="flat-title" data-wow-delay="0s">
           <h5 className="fw-semibold">{caroselData.title}</h5>
           <div className="box-btn-slide">
-            <div className="swiper-button-next nav-swiper nav-prev-products">
+            <div className={`swiper-button-next nav-swiper ${prevButtonClass}`}>
               <i className="icon-arrow-left-lg" />
             </div>
-            <div className="swiper-button-prev nav-swiper nav-next-products">
+            <div className={`swiper-button-prev nav-swiper ${nextButtonClass}`}>
               <i className="icon-arrow-right-lg" />
             </div>
           </div>
@@ -27,11 +31,11 @@ const index = ({ caroselData }) => {
           modules={[Navigation, Pagination]}
           spaceBetween={30}
           navigation={{
-            nextEl: ".nav-next-products",
-            prevEl: ".nav-prev-products",
+            nextEl: `.${nextButtonClass}`,
+            prevEl: `.${prevButtonClass}`,
           }}
           pagination={{
-            el: ".sw-pagination-products",
+            el: `.${paginationClass}`,
             clickable: true,
           }}
           breakpoints={{
@@ -119,7 +123,9 @@ const index = ({ caroselData }) => {
         </Swiper>
 
         {/* Pagination for mobile */}
-        <div className="d-flex d-lg-none sw-dot-default sw-pagination-products justify-content-center" />
+        <div
+          className={`d-flex d-lg-none sw-dot-default ${paginationClass} justify-content-center`}
+        />
       </div>
     </section>
   );
