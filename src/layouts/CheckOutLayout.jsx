@@ -5,6 +5,7 @@ import { CardCarosel, ServiceFeatures } from "../components";
 const CheckOutLayout = () => {
   const { pathname } = useLocation();
   const [recentlyViewed, setRecentlyViewed] = useState({
+    id: 21,
     title: "Recent Viewed",
     values: [
       {

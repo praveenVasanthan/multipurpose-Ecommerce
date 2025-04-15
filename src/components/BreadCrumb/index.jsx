@@ -1,8 +1,9 @@
 import React from "react";
-import { useMatches } from "react-router-dom";
+import { useLocation, useMatches } from "react-router-dom";
 
 const index = () => {
   const matches = useMatches();
+  const { pathname } = useLocation();
 
   const crumbs = matches
     .filter((match) => match.handle?.crumb)
@@ -12,7 +13,10 @@ const index = () => {
     }));
 
   return (
-    <div className="tf-sp-1">
+    <div
+      className="tf-sp-1"
+      style={{ display: `${pathname == "/" ? "none" : "block"}` }}
+    >
       <div className="container">
         <ul className="breakcrumbs">
           {crumbs.map((crumb, index) => (
