@@ -5,7 +5,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Link } from "react-router-dom";
-import APP_CONSTANTS from "../../config/AppConstants";
+import APP_CONSTANTS from "../config/AppConstants";
 
 const index = ({ caroselData }) => {
   const nextButtonClass = `swiper-button-prev-${caroselData.id}`;

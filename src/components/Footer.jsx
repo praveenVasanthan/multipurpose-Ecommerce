@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import APP_CONSTANTS from "../../config/AppConstants";
+import APP_CONSTANTS from "../config/AppConstants";
 import { Link } from "react-router-dom";
 import { MyContext } from "@context/Context";
 

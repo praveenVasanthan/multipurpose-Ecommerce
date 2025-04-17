@@ -1,6 +1,6 @@
 const APP_CONSTANTS = {
   App_Name: "E-commerce",
-  App_Logo: "/images/logo/logo.svg",
+  App_Logo: "/images/logo/logo-color.png",
   currency: "₹",
 };
 

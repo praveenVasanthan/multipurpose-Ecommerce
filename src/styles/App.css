@@ -18,11 +18,11 @@ body {
 }
 
 .change-button {
-  color: #ff3d3d;
-  border-color: #ff3d3d;
+  color: var(--primary);
+  border-color: var(--primary);
   padding: 9px;
   border-radius: 3px;
-  border: 1px solid #ff3d3d;
+  border: 1px solid var(--primary);
   display: flex;
   cursor: pointer;
   -webkit-transition: all 0.3s ease-in-out;
