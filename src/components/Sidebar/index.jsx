@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link, useLocation } from "react-router-dom";
 import APP_CONSTANTS from "../../config/AppConstants";
+import { MyContext } from "../../context/Context";
 
 const index = () => {
   const location = useLocation().pathname;
+
+  const { categories } = useContext(MyContext);
 
   const menuItems = [
     { id: "/", label: "Home" },
@@ -47,6 +50,30 @@ const index = () => {
         <div className="mb-canvas-content">
           <div className="mb-body">
             <div className="flat-animate-tab">
+              <div className="flat-title-tab-nav-mobile">
+                <ul className="menu-tab-line" role="tablist">
+                  <li className="nav-tab-item" role="presentation">
+                    <a
+                      href="#main-menu"
+                      className="tab-link link fw-semibold active"
+                      data-bs-toggle="tab"
+                    >
+                      Menu
+                    </a>
+                  </li>
+                  <li className="br-line type-vertical bg-line h23" />
+                  <li className="nav-tab-item" role="presentation">
+                    <a
+                      href="#category"
+                      className="tab-link link fw-semibold"
+                      data-bs-toggle="tab"
+                    >
+                      Categories
+                    </a>
+                  </li>
+                </ul>
+              </div>
+
               <div className="tab-content">
                 <div
                   className="tab-pane active show"
@@ -88,6 +115,40 @@ const index = () => {
                               <span className="fw-medium">{info.value}</span>
                             </a>
                           </p>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+                <div className="tab-pane" id="category" role="tabpanel">
+                  <div className="mb-content-top">
+                    <ul className="nav-ul-mb">
+                      {categories.map((category) => (
+                        <li className="nav-mb-item" key={category.id}>
+                          <a
+                            href={`#drd-categories-${category.value}`}
+                            className="collapsed mb-menu-link"
+                            data-bs-toggle="collapse"
+                            aria-expanded="true"
+                            aria-controls="drd-categories-appearl"
+                          >
+                            <span>{category.title}</span>
+                            <span className="btn-open-sub"></span>
+                          </a>
+                          <div
+                            id={`drd-categories-${category.value}`}
+                            className="collapse"
+                          >
+                            <ul className="sub-nav-menu">
+                              {category.subcategories.map((sub) => (
+                                <li key={sub.id}>
+                                  <a href="#" className="sub-nav-link">
+                                    {sub.subTitle}
+                                  </a>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
                         </li>
                       ))}
                     </ul>
