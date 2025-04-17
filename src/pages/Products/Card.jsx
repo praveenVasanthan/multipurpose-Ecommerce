@@ -97,7 +97,7 @@ const Card = ({ product }) => {
             >
               <path
                 d="M3.59837 5.26487C3.25014 5.61309 ..."
-                stroke="#FF3D3D"
+                stroke="-primary"
                 strokeWidth="1.5"
                 strokeLinecap="round"
                 strokeLinejoin="round"

@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
-import APP_CONSTANTS from "../../config/AppConstants";
+import APP_CONSTANTS from "../config/AppConstants";
 
 const index = () => {
   const location = useLocation().pathname;
