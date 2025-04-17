@@ -1,7 +1,7 @@
 import React from "react";
 
-const index = ({ bannerData }) => {
-    if (!bannerData) return null;
+const BestOffer = ({ bannerData }) => {
+  if (!bannerData) return null;
   return (
     <section className="pb-5">
       <div className="container">
@@ -50,4 +50,4 @@ const index = ({ bannerData }) => {
   );
 };
 
-export default index;
+export default BestOffer;

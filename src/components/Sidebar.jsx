@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Link, useLocation } from "react-router-dom";
-import APP_CONSTANTS from "../../config/AppConstants";
-import { MyContext } from "../../context/Context";
+import APP_CONSTANTS from "../config/AppConstants";
+import { MyContext } from "../context/Context";
 
 const index = () => {
   const location = useLocation().pathname;
