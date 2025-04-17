@@ -1,11 +1,8 @@
 import React, { useState } from "react";
-import {
-  ServiceFeatures,
-  CardCarosel,
-  OfferCards,
-  BestOffer,
-} from "@components/index.js";
+import { ServiceFeatures, CardCarosel } from "@components/index.js";
 import Banner from "./Banner";
+import BestOffer from "./BestOffer";
+import OfferCards from "./OfferCards";
 
 const index = () => {
   const [caroselData, setCaroselData] = useState({

@@ -2,12 +2,11 @@
 import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
-
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
 
-const index = () => {
+const OfferCards = () => {
   const [categories] = useState([
     {
       id: 1,
@@ -108,4 +107,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default OfferCards;
