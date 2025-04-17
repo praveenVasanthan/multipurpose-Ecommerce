@@ -45,7 +45,10 @@ const index = () => {
                     <div
                       className="dropdown-trigger"
                       onClick={() => setOpen(true)}
-                      style={{display: "flex",justifyContent: "space-between"}}
+                      style={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                      }}
                     >
                       <span>
                         {selected
@@ -53,7 +56,7 @@ const index = () => {
                               ?.title
                           : "All Categories"}
                       </span>
-                      <span style={{display: "flex", alignItems: "center"}}>
+                      <span style={{ display: "flex", alignItems: "center" }}>
                         <i className="icon icon-arrow-down"></i>
                       </span>
                     </div>
@@ -245,13 +248,30 @@ const index = () => {
                 <p className="title fw-semibold">All Categories</p>
               </div>
               <nav className="category-menu active-item">
-                <div className="menu-category-menu-container">
-                  <ul id="primary-menu" className="megamenu">
+                <div className="tf-nav-menu menu-category-menu-container">
+                  <ul className="menu-category-list">
                     {categories.map((category, index) => (
                       <li key={index} className="menu-item">
-                        <Link to={`/products/${category.value}`}>
+                        <Link
+                          to={`/products/${category.value}`}
+                          className="item-link body-text-3"
+                        >
                           <span>{category.title}</span>
                         </Link>
+                        <div className="sub-menu-container">
+                          <ul className="sub-menu-list">
+                            {category.subcategories.map((subcategory) => (
+                              <li
+                                className="sub-menu-item"
+                                key={subcategory.id}
+                              >
+                                <a href="#" className="body-text-3 link">
+                                  {subcategory.subTitle}
+                                </a>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
                       </li>
                     ))}
                   </ul>

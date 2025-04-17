@@ -156,3 +156,8 @@ body {
 .dropdown-item:hover {
   background: #f0f0f0;
 }
+
+.category-menu ul a{
+  border: none in !important;
+  padding: 0 !important;
+}
